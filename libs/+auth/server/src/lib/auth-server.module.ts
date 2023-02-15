@@ -15,7 +15,6 @@ import { LocalAuthGuard } from './guards/local-auth.guard';
 import { JwtStrategy } from './strategies/jwt.strategy';
 import { GoogleStrategy } from './strategies/google.strategy';
 import { GoogleAuthGuard } from './guards/google-auth.guard';
-import { StripeListener } from './listeners/stripe.listener';
 import { AuthServerConfig } from './auth-server.config';
 import { ApiKeyStrategy } from './strategies/api-key.strategy';
 import { ApiKeyAuthGuard } from './guards/api-key-auth.guard';
@@ -57,7 +56,6 @@ import { UserController } from './controllers/user.controller';
     JwtStrategy,
     GoogleStrategy,
     GoogleAuthGuard,
-    StripeListener,
     ApiKeyAuthGuard,
     JwtAuthGuard,
     JwtOrApiKeyAuthGuard,
