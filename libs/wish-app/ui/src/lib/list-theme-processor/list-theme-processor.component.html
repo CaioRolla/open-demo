@@ -1,0 +1,173 @@
+<div class="public"
+     [class.public--preview]="isPreview">
+
+    <div class="public__container">
+
+        <div class="add">
+            <!-- <ng-adsense [adClient]="'ca-pub-4445519388052102'"
+                        [adSlot]="3124001604"
+                        [adFormat]="'auto'"
+                        [fullWidthResponsive]="true"></ng-adsense> -->
+        </div>
+
+        <nav *ngIf="!isPreview"
+             class="nav">
+
+            <a href="http://listaideal.com.br"><img class="nav__logo"
+                     src="assets/logo.svg"
+                     alt="listaideal.com.br logo"></a>
+
+        </nav>
+
+        <!-- <nav class="nav">
+            <div class="nav__logo">Logo</div>
+            <div class="nav__actions">
+                <a href="http://">Link A</a>
+                <a href="http://">Link B</a>
+                <a href="http://">Link C</a>
+            </div>
+        </nav> -->
+
+
+        <header class="header">
+
+            <div *ngIf="bannerUrl"
+                 class="header__banner">
+                <img [src]="bannerUrl"
+                     [attr.alt]="name"
+                     loading="lazy"
+                     class="animation"
+                     onload="this.classList.remove('animation')">
+            </div>
+
+            <div class="header__info info"
+                 [class.header__info--no-banner]="!bannerUrl">
+                <div class="info__image"
+                     [class.info__image--no-image]="!profileUrl">
+                    <img *ngIf="profileUrl"
+                         [src]="profileUrl"
+                         [attr.alt]="name"
+                         loading="lazy"
+                         class="animation"
+                         onload="this.classList.remove('animation')">
+                </div>
+
+                <div class="info__text">
+                    <h1>{{ name }}</h1>
+                    <p *ngIf="desc">{{ desc }}</p>
+                </div>
+
+            </div>
+
+        </header>
+
+        <section *ngIf="pix || navigatorShare"
+                 class="actions">
+            <button *ngIf="pix"
+                    demo-button
+                    (click)="pixClicked.emit(pix)">
+                <hero-icon demo-icon-prefix
+                           name="cash"></hero-icon>
+                <!-- <span demo-icon-prefix>💵</span> -->
+                <ng-container i18n>Make a PIX</ng-container>
+            </button>
+
+            <button *ngIf="navigatorShare"
+                    demo-button
+                    (click)="onShareClicked()">
+                <hero-icon demo-icon-prefix
+                           name="share"></hero-icon>
+                <ng-container i18n>Share</ng-container>
+            </button>
+        </section>
+
+        <section *ngIf="eventLocation ||eventDate"
+                 class="event">
+
+            <div class="event__location">{{ eventLocation }}</div>
+            <div class="event__date"
+                 *ngIf="eventDate">{{ eventDate | date:'fullDate' }}</div>
+            <div class="event__time"
+                 *ngIf="eventDate">{{ eventDate | date:'HH:mm' }}</div>
+
+        </section>
+
+
+
+        <main class="products">
+
+            <div *ngFor="let product of products"
+                 class="product">
+
+                <div class="product__image">
+                    <img *ngIf="product.previewUrl"
+                         [src]="product.previewUrl"
+                         loading="lazy"
+                         class="animation"
+                         onload="this.classList.remove('animation')">
+                </div>
+
+                <div class="product__info">
+                    <h2 [demoTooltip]="product.name">{{ product.name | truncate:[21] }}</h2>
+                    <p *ngIf="product.desc"
+                       [demoTooltip]="product.desc">{{ product.desc | truncate:[42] }} </p>
+
+                    <div class="price">
+                        <ng-container *ngIf="product.estimatedPrice">{{ product.estimatedPrice | currency: 'BRL' }}</ng-container>
+                    </div>
+                </div>
+
+
+                <div class="product__actions">
+
+
+                    <a *ngIf="product.url && (!product.takenBy || personEmail && product.takenBy === personEmail)"
+                       [href]="product.url"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       demo-text-primary-button
+                       i18n>See product
+                        <hero-icon demo-icon-suffix
+                                   name="external-link"></hero-icon>
+                    </a>
+
+
+                    <button demo-danger-button
+                            *ngIf="personEmail && product.takenBy === personEmail"
+                            [loading]="selectingProductId === product.id"
+                            (click)="productUnselectedEvent(product.id)">
+                        <span i18n>Unselect</span>
+                    </button>
+                    <button *ngIf="!product.takenBy"
+                            demo-primary-button
+                            [loading]="selectingProductId === product.id"
+                            (click)="productSelectedEvent(product.id)">
+                        <span i18n>Select</span>
+                    </button>
+
+                    <div *ngIf="personEmail && product.takenBy && product.takenBy !== personEmail"
+                         class="already-selected"
+                         i18n>Unavailable</div>
+                </div>
+
+
+
+            </div>
+
+        </main>
+
+
+        <footer class="footer">
+
+
+            <div class="footer__powered">
+                ⚡️ Powered by <a target="_blank"
+                   href="http://listaideal.com.br">listaideal.com.br</a>
+            </div>
+        </footer>
+
+    </div>
+
+
+
+</div>

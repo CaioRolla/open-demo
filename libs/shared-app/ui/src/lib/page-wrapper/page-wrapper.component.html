@@ -1,0 +1,54 @@
+<div class="page-wrapper">
+
+
+    <div class="page-wrapper__sidebar">
+
+        <ng-content select="demo-sidebar"></ng-content>
+
+    </div>
+
+    <div *ngIf="loading" class="page-wrapper__loading">
+        <demo-linear-progress mode="undetermined" theme="primary" [progress]="50"></demo-linear-progress>
+    </div>
+
+
+    <div class="page-wrapper__body">
+
+        <div class="page-wrapper__body__top-bar">
+
+            <ng-content select="demo-topbar"></ng-content>
+
+        </div>
+
+        <div class="page-wrapper__body__header">
+
+            <div class="page-wrapper__body__header__left">
+                <div class="page-wrapper__body__header__left__title">
+                    <ng-content select="h1[demo-page-wrapper-title]"></ng-content>
+                </div>
+
+                <div class="page-wrapper__body__header__left__subtitle">
+                    <ng-content select="p[demo-page-wrapper-subtitle]"></ng-content>
+                </div>
+
+                <div class="page-wrapper__body__header__left__breadcumb">
+                    <ng-content select="demo-breadcumb"></ng-content>
+                </div>
+
+            </div>
+
+            <div class="page-wrapper__body__header__actions">
+                <ng-content select="[demo-page-wrapper-title-actions]"></ng-content>
+            </div>
+
+        </div>
+
+        <div class="page-wrapper__body__content">
+
+            <ng-content></ng-content>
+
+        </div>
+
+    </div>
+
+</div>

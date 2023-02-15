@@ -1,0 +1,14 @@
+:host {
+  display: block;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+
+  ::ng-deep button[demo-radio-group-button] {
+    &:not(:first-child) {
+      margin-top: 18px;
+    }
+  }
+}

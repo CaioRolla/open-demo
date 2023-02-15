@@ -1,0 +1,110 @@
+<div class="permissions-dialog">
+
+    <demo-card>
+
+        <demo-card-simple-header>
+            <ng-container i18n>Manage permissions</ng-container>
+        </demo-card-simple-header>
+
+        <div class="container">
+
+            <div class="container__nav">
+
+                <demo-vertical-nav>
+
+                    <button *ngFor="let section of options$ | async"
+                            demoVerticalNavItem
+                            [active]="(active$ | async) === section.title"
+                            (click)="active$.next(section.title)">
+                        <hero-icon [name]="section.icon"></hero-icon>
+                        <span i18n>{{ section.title }}</span>
+                    </button>
+
+
+                </demo-vertical-nav>
+
+            </div>
+
+            <div class="permissions">
+                <ng-container *ngIf="activeSection$ | async as section">
+
+                    <demo-checkbox-field *ngFor="let permission of section.permissions"
+                                        (change)="optionChanged(section.title, permission.value, $any($event.target).checked)">
+                        <input type="checkbox"
+                               [name]="permission.name"
+                               [checked]="permission.selected">
+                        <label [for]="permission.name"
+                               i18n>
+                            {{ permission.name }}
+                        </label>
+
+                        <span demo-checkbox-subtitle>
+                            {{ permission.desc }}
+                        </span>
+                    </demo-checkbox-field>
+
+                </ng-container>
+
+            </div>
+
+        </div>
+
+        <!-- <div *ngFor="let section of options$ | async">
+
+            <p>{{ section.title }} </p>
+
+            <demo-checkbox-field *ngFor="let permission of section.permissions"
+                                (change)="optionChanged(section.title, permission.value, $any($event.target).checked)">
+                <input type="checkbox"
+                       [name]="permission.name"
+                       [checked]="permission.selected">
+                <label [for]="permission.name"
+                       i18n>
+                    {{ permission.name }}
+                </label>
+
+                <span demo-checkbox-subtitle>
+                    {{ permission.desc }}
+                </span>
+            </demo-checkbox-field>
+
+        </div> -->
+
+
+
+
+
+        <demo-card-actions-footer>
+
+            <div class="actions-footer">
+                <button demo-text-primary-button
+                        i18n
+                        (click)="onSelectAll()">
+                    Select all
+                </button>
+
+                <div class="spacer"></div>
+
+
+                <button demo-text-neutral-button
+                        i18n
+                        (click)="onCancel()">
+                    Cancel
+                </button>
+
+
+                <button type="button"
+                        demo-primary-button
+                        (click)="onSave()"
+                        i18n>
+                    Save
+                </button>
+
+            </div>
+
+
+        </demo-card-actions-footer>
+
+    </demo-card>
+
+</div>

@@ -1,0 +1,73 @@
+<demo-card>
+
+    <div class="content">
+
+        <div class="content__icon">
+
+            🎉
+
+        </div>
+
+        <div class="message">
+
+            <p *ngIf="!data.url" i18n>You successfully selected a product.</p>
+            <p *ngIf="data.url" i18n>You successfully selected a product. You can click in the product bellow to buy it.</p>
+
+        </div>
+
+
+        <a class="product-link"
+           *ngIf="data.url"
+           target="_blank"
+           [href]="data.url">
+
+            <ng-container *ngTemplateOutlet="product"></ng-container>
+        </a>
+
+
+        <ng-container *ngIf="!data.url">
+            <ng-container *ngTemplateOutlet="product"></ng-container>
+        </ng-container>
+
+
+
+        <ng-template #product>
+            <div class="product">
+                <img *ngIf="data.previewUrl"
+                     [src]="data.previewUrl">
+
+                <div class="product__info">
+                    <h2>{{ data.name }}</h2>
+                    <p>{{ data.desc | truncate:[52] }}</p>
+                </div>
+
+            </div>
+        </ng-template>
+
+
+
+    </div>
+
+
+    <demo-card-actions-footer *ngIf="data.url">
+
+
+        <a demo-text-primary-button
+           i18n
+           target="_blank"
+           [href]="data.url">
+            Buy
+
+            <hero-icon demo-icon-suffix
+                       name="external-link"></hero-icon>
+        </a>
+
+
+        <!-- <button type="button"
+                demo-primary-button
+                (click)="onClose()"
+                i18n>
+            Close
+        </button> -->
+    </demo-card-actions-footer>
+</demo-card>

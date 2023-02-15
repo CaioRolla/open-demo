@@ -1,0 +1,127 @@
+.platform-product-clone {
+  width: 86vw;
+  min-width: 300px;
+  max-width: 620px;
+
+
+  &__content {
+    max-height: calc(90vh - 71px - 59px - 64px);
+    overflow: auto;
+  }
+
+}
+
+.product-table-row {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+
+  &__checkbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 16px;
+  }
+
+  &__info {
+    flex: 3;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 16px;
+
+    h2 {
+      font-size: var(--demo-fs-300);
+      color: var(--demo-color-neutral-700);
+      font-weight: 500;
+    }
+
+    p {
+      font-size: var(--demo-fs-200);
+      color: var(--demo-color-neutral-500);
+      font-weight: 300;
+    }
+
+    .price {
+      margin-top: 4px;
+      display: none;
+
+      @media screen and (max-width: 600px) {
+        display: block;
+      }
+    }
+
+  }
+
+  .price {
+    font-size: 14px;
+    color: var(--demo-color-neutral-600);
+    font-weight: 400;
+  }
+
+
+  &__price {
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 8px;
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
+  }
+
+  &__image {
+    height: 72px;
+    width: 72px;
+    overflow: hidden;
+    border-radius: 6px;
+
+    img {
+      transition: opacity 0.3s ease-in-out;
+      height: 72px;
+      width: 72px;
+      object-fit: cover;
+    }
+  }
+}
+
+.product-table-search-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+
+  &__count {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--demo-color-neutral-400);
+  }
+
+  &__search {
+    flex: 1;
+    max-width: 260px;
+    demo-form-field {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    &__count {
+      display: none;
+    }
+
+    &__search {
+      max-width: unset;
+    }
+  }
+}
+
+.product-table-empty {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--demo-color-neutral-400);
+}

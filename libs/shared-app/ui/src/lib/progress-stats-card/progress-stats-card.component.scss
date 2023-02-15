@@ -1,0 +1,18 @@
+.progress-stats-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-right: 16px;
+
+
+  &::ng-deep {
+    demo-progress-stats-card-item {
+      &:not(:first-child) {
+        margin-top: 22px;
+      }
+    }
+  }
+}

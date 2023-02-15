@@ -1,0 +1,111 @@
+<div class="appearance-tab">
+
+    <demo-card>
+
+        <form [formGroup]="form"
+              class="form">
+
+
+            <!-- <div class="form__color">
+                <demo-form-field>
+                    <label for="color"
+                           demo-label
+                           i18n>
+                        Text Color
+                    </label>
+
+                    <demo-color-picker name="color"
+                                      formControlName="color"></demo-color-picker>
+                </demo-form-field>
+            </div>
+
+            <div class="form__background">
+                <demo-form-field>
+                    <label for="background"
+                           demo-label
+                           i18n>
+                        Background
+                    </label>
+
+                    <demo-color-picker name="background"
+                                      formControlName="background"></demo-color-picker>
+                </demo-form-field>
+            </div>
+
+            <div class="form__border-color">
+                <demo-form-field>
+                    <label for="borderColor"
+                           demo-label
+                           i18n>
+                        Border Color
+                    </label>
+
+                    <demo-color-picker name="borderColor"
+                                      formControlName="borderColor"></demo-color-picker>
+                </demo-form-field>
+            </div> -->
+
+
+
+
+            <div class="form__banner-image">
+                <label [optional]="true"
+                       demo-label
+                       i18n>
+                    Banner
+                </label>
+
+                <demo-asset-upload formControlName="bannerId"
+                                  accept="image/*"
+                                  [multiple]="false"
+                                  [canReorder]="false"
+                                  (assetsChanged)="handleBannerChange($event)"
+                                  (fileRemoved)="handleBannerRemoved()"></demo-asset-upload>
+            </div>
+
+            <div class="form__profile-image">
+                <label [optional]="true"
+                       demo-label
+                       i18n>
+                    Profile
+                </label>
+
+                <demo-asset-upload formControlName="profileId"
+                                  accept="image/*"
+                                  [multiple]="false"
+                                  [canReorder]="false"
+                                  (assetsChanged)="handleProfileChange($event)"
+                                  (fileRemoved)="handleProfileRemoved()"></demo-asset-upload>
+            </div>
+
+
+        </form>
+
+
+
+        <!-- <demo-card-actions-footer> -->
+
+            <!-- <div *ngIf="(patchingList$ | async) || false" i18n>Saving...</div>
+            <div *ngIf="!(patchingList$ | async) || false" i18n>Saved 🎉</div> -->
+
+            <!-- <button demo-text-neutral-button
+                    i18n
+                    (click)="resetPreview()">Reset</button>
+
+
+
+
+            <button type="button"
+                    demo-primary-button
+                    [loading]="(patchingList$ | async) || false"
+                    (click)="onSubmit()"
+                    i18n>
+                Save
+            </button> -->
+
+        <!-- </demo-card-actions-footer> -->
+
+    </demo-card>
+
+
+</div>

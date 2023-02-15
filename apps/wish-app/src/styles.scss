@@ -1,0 +1,97 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+
+    // Colors
+    // Primary
+    --demo-color-primary-0: #fff;
+    --demo-color-primary-50: #EFF6FF;
+    --demo-color-primary-100: #DBEAFE;
+    --demo-color-primary-200: #BFDBFE;
+    --demo-color-primary-300: #93C5FD;
+    --demo-color-primary-400: #60A5FA;
+    --demo-color-primary-500: #3b82f6;
+    --demo-color-primary-600: #2563EB;
+    --demo-color-primary-700: #1D4ED8;
+    --demo-color-primary-800: #1E40AF;
+    --demo-color-primary-900: #1E3A8A;
+    // accent
+    --demo-color-accent-0: #fff;
+    --demo-color-accent-50: #F5F3FF;
+    --demo-color-accent-100: #EDE9FE;
+    --demo-color-accent-200: #DDD6FE;
+    --demo-color-accent-300: #C4B5FD;
+    --demo-color-accent-400: #A78BFA;
+    --demo-color-accent-500: #8B5CF6;
+    --demo-color-accent-600: #7C3AED;
+    --demo-color-accent-700: #6D28D9;
+    --demo-color-accent-800: #5B21B6;
+    --demo-color-accent-900: #4C1D95;
+    // Neutral
+    --demo-color-neutral-0: #fff;
+    --demo-color-neutral-50: #F9FAFB;
+    --demo-color-neutral-100: #F3F4F6;
+    --demo-color-neutral-200: #E5E7EB;
+    --demo-color-neutral-300: #D1D5DB;
+    --demo-color-neutral-400: #9CA3AF;
+    --demo-color-neutral-500: #6B7280;
+    --demo-color-neutral-600: #4B5563;
+    --demo-color-neutral-700: #374151;
+    --demo-color-neutral-800: #1F2937;
+    --demo-color-neutral-900: #111827;
+
+    --demo-color-danger-0: #fff;
+    --demo-color-danger-50: #FEF2F2;
+    --demo-color-danger-100: #FEE2E2;
+    --demo-color-danger-200: #FECACA;
+    --demo-color-danger-300: #FCA5A5;
+    --demo-color-danger-400: #F87171;
+    --demo-color-danger-500: #EF4444;
+    --demo-color-danger-600: #DC2626;
+    --demo-color-danger-700: #B91C1C;
+    --demo-color-danger-800: #991B1B;
+    --demo-color-danger-900: #7F1D1D;
+
+    --demo-color-warning-0: #fff;
+    --demo-color-warning-50: #FFFBEB;
+    --demo-color-warning-100: #FEF3C7;
+    --demo-color-warning-200: #FDE68A;
+    --demo-color-warning-300: #FCD34D;
+    --demo-color-warning-400: #FBBF24;
+    --demo-color-warning-500: #F59E0B;
+    --demo-color-warning-600: #D97706;
+    --demo-color-warning-700: #B45309;
+    --demo-color-warning-800: #92400E;
+    --demo-color-warning-900: #78350F;
+
+    --demo-color-success-0: #fff;
+    --demo-color-success-50: #ECFDF5;
+    --demo-color-success-100: #D1FAE5;
+    --demo-color-success-200: #A7F3D0;
+    --demo-color-success-300: #6EE7B7;
+    --demo-color-success-400: #34D399;
+    --demo-color-success-500: #10B981;
+    --demo-color-success-600: #059669;
+    --demo-color-success-700: #047857;
+    --demo-color-success-800: #065F46;
+    --demo-color-success-900: #064E3B;
+
+    --demo-fs-100: 8px;
+    --demo-fs-200: 12px;
+    --demo-fs-300: 14px;
+    --demo-fs-400: 16px;
+    --demo-fs-500: 18px;
+    --demo-fs-600: 24px;
+    --demo-fs-700: 32px;
+    --demo-fs-800: 64px;
+
+    --demo-size-100: 8px;
+    --demo-size-200: 12px;
+    --demo-size-300: 16px;
+    --demo-size-400: 24px;
+    --demo-size-500: 32px;
+    --demo-size-600: 48px;
+    --demo-size-700: 56px;
+    --demo-size-800: 64px;
+    --demo-size-900: 80px;
+
+}

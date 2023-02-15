@@ -1,0 +1,15 @@
+:host {
+  display: block;
+}
+
+.bradcumb {
+  display: flex;
+  flex-direction: row;
+  grid-gap: 2px;
+  align-items: center;
+
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--demo-color-neutral-500);
+
+}

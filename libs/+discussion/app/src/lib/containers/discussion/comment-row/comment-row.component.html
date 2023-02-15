@@ -1,0 +1,50 @@
+<div *ngIf="user$ | async as user"
+     class="comment-row">
+
+    <div class="avatar">
+        <demo-avatar [alt]="comment.userDisplayName"
+                    [src]="comment.userProfileUrl"
+                    size="41px"></demo-avatar>
+    </div>
+
+    <div class="info">
+        <div class="info-header">
+            <div class="info-header__name">
+                {{ comment.userDisplayName }}
+            </div>
+
+            <div class="info-header__date">
+
+                {{ comment.createdAt | date: 'short' }}
+
+            </div>
+
+        </div>
+
+        <div class="info-content">
+            <quill-view-html [content]="comment.content || ''"></quill-view-html>
+        </div>
+    </div>
+
+
+    <div *ngIf="user.id === comment.userId"
+         class="actions">
+
+        <button demo-text-neutral-button
+                [demoMenu]="actions">
+            <hero-icon name="dots-vertical"></hero-icon>
+        </button>
+
+        <ng-template #actions>
+
+            <button demo-text-danger-button
+                    (click)="deleteButtonClicked()">
+                <hero-icon demo-icon-prefix
+                           name="x"></hero-icon>
+                <ng-container i18n>Delete</ng-container>
+            </button>
+
+        </ng-template>
+    </div>
+
+</div>

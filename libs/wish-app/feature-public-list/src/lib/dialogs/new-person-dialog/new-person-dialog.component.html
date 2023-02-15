@@ -1,0 +1,76 @@
+<demo-card *ngIf="list$ | async as list">
+
+    <div class="dialog">
+
+        <form [formGroup]="form"
+              class="form">
+
+
+            <demo-form-section-header>
+                <h2 demo-form-section-header-title>
+                    {{ list.name }}
+                </h2>
+                <p demo-form-section-header-subtitle
+                   i18n>
+                    Please inform your name and email to access the list.
+                </p>
+            </demo-form-section-header>
+
+
+            <div class="form__name">
+                <demo-form-field>
+                    <label for="name"
+                           demo-label
+                           i18n>
+                        Name
+                    </label>
+                    <input name="name"
+                           formControlName="name"
+                           type="text"
+                           demo-input
+                           maxlength="255">
+                    <demo-error *ngIf="nameControl.hasError('required')">
+                        <ng-container i18n>The name field is required.</ng-container>
+                    </demo-error>
+                </demo-form-field>
+            </div>
+
+            <div class="form__email">
+                <demo-form-field>
+                    <label for="email"
+                           demo-label
+                           i18n>
+                        Email
+                    </label>
+                    <input name="email"
+                           formControlName="email"
+                           type="email"
+                           demo-input>
+
+                    <demo-error *ngIf="emailControl.hasError('required')">
+                        <ng-container i18n>The email field is required.</ng-container>
+                    </demo-error>
+
+                    <demo-error *ngIf="emailControl.hasError('email')">
+                        <ng-container i18n>Invalid email format.</ng-container>
+                    </demo-error>
+                </demo-form-field>
+            </div>
+
+        </form>
+
+
+
+
+    </div>
+
+    <demo-card-actions-footer>
+        <button type="button"
+                demo-primary-button
+                (click)="onSubmit()"
+                i18n>
+            Access list
+        </button>
+    </demo-card-actions-footer>
+
+</demo-card>

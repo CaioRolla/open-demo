@@ -1,0 +1,69 @@
+:host {
+  --vertical-nav-item-padding: 8px;
+  --vertical-nav-item-border-radius: 4px;
+
+  --vertical-nav-item-background: transparent;
+  --vertical-nav-item-icon-color: var(--demo-color-neutral-500);
+  --vertical-nav-item-text-color: var(--demo-color-neutral-600);
+
+  // Reset
+  display: flex;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  background: none;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.isActive,
+  &.is-active {
+    --vertical-nav-item-background: var(--demo-color-neutral-200);
+    --vertical-nav-item-icon-color: var(--demo-color-neutral-600);
+    --vertical-nav-item-text-color: var(--demo-color-neutral-700);
+  }
+
+  &:not(:first-child) {
+    margin-top: var(--vertical-nav-item-padding);
+  }
+}
+
+.vertical-nav-item {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: var(--vertical-nav-item-padding);
+  border-radius: var(--vertical-nav-item-border-radius);
+  background: var(--vertical-nav-item-background);
+  min-height: 38px;
+
+  &__icon {
+    display: inline-flex;
+    color: var(--vertical-nav-item-icon-color);
+    padding-right: var(--vertical-nav-item-padding);
+
+    ::ng-deep hero-icon {
+      height: 22px !important;
+      width: auto !important;
+    }
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  &__text {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 0px;
+    width: 100%;
+    white-space: nowrap;
+
+    color: var(--vertical-nav-item-text-color);
+  }
+}

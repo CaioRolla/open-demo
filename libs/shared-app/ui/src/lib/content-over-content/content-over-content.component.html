@@ -1,0 +1,21 @@
+<div class="content-over-content">
+
+  <div
+    class="content-over-content__content"
+    [class.content-over-content__content--displaying-content]="displayOverContent"
+  >
+    <ng-content>
+    </ng-content>
+  </div>
+
+  <div
+    class="content-over-content__over-content"
+    *ngIf="displayOverContent"
+    [@fadeInOut]
+  >
+
+    <ng-content select="[overContent]"></ng-content>
+
+  </div>
+
+</div>

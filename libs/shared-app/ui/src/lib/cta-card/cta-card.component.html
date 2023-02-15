@@ -1,0 +1,30 @@
+<div class="cta-card">
+    <demo-card [noPadding]="true">
+
+        <div class="cta-card__content">
+            <div class="cta-card__content__container">
+                <div class="cta-card__content__container__info">
+                    <div
+                        class="cta-card__content__container__info__title"
+                        i18n
+                    >
+                        <ng-content select="[demo-cta-card-title]"></ng-content>
+                    </div>
+                    <div
+                        class="cta-card__content__container__info__text"
+                        i18n
+                    >
+                        <ng-content select="[demo-cta-card-content]"></ng-content>
+                    </div>
+
+                    <div class="cta-card__content__container__info__action">
+
+                        <ng-content select="a[demo-cta-card-action]"></ng-content>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </demo-card>
+</div>

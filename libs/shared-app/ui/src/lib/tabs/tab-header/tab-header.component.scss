@@ -1,0 +1,68 @@
+:host {
+  display: block;
+}
+
+.tab-header {
+  margin: 0;
+  padding: 0;
+  color: unset;
+  background: unset;
+  border: unset;
+  outline: unset;
+
+  // Common atributes
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+  user-select: none;
+  position: relative;
+  font-size: 14px;
+
+  color: var(--demo-color-neutral-500);
+
+  // &:focus {
+  //   box-shadow: 0 0 0 1px var(--demo-color-primary-500);
+  // }
+
+  &--selected, &:focus{
+    background: var(--demo-color-neutral-200);
+    color: var(--demo-color-neutral-600);
+
+    .tab-header__content {
+      ::ng-deep hero-icon {
+        color: var(--demo-color-primary-600);
+      }
+    }
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    filter: grayscale(100%);
+
+    pointer-events: none;
+    cursor: pointer;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap;
+
+    ::ng-deep hero-icon {
+      height: 20px !important;
+      width: auto !important;
+    }
+
+    ::ng-deep *[demo-tab-header-prefix] {
+      margin-right: 8px;
+    }
+
+    ::ng-deep *[demo-tab-header-suffix] {
+      margin-left: 8px;
+    }
+
+  }
+
+}

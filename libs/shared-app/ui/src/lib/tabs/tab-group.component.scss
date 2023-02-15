@@ -1,0 +1,32 @@
+:host {
+  width: 100%;
+  display: block;
+}
+
+.tab-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    grid-gap: 16px;
+
+    &--card {
+      ::ng-deep demo-tab-header {
+        margin-bottom: 16px;
+      }
+    }
+
+    // &:not(:last-child) {
+    //   ::ng-deep demo-tab-header {
+    //     margin-right: 16px;
+    //   }
+    // }
+  }
+
+  &__content {
+  }
+}

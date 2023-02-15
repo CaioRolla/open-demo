@@ -1,0 +1,65 @@
+:host {
+  display: block;
+}
+
+.register {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  max-width: 360px;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+
+  demo-form-field {
+    width: 100%;
+
+    &:not(&:first-child) {
+      margin-top: 8px;
+    }
+  }
+
+  &__submit {
+    margin-top: 16px;
+  }
+
+  &__forgot,
+  &__sign-up {
+    text-align: center;
+    font-size: var(--demo-fs-200);
+    color: var(--demo-color-neutral-500);
+    font-weight: 400;
+  }
+
+  &__sign-up {
+    margin-top: 16px;
+  }
+
+  &__forgot {
+    margin-top: 4px;
+  }
+}
+
+.divider {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 38px 0px;
+
+  &__text {
+    padding: 0px 12px;
+    font-size: var(--demo-fs-200);
+    color: var(--demo-color-neutral-500);
+    font-weight: 400;
+  }
+  &__dash {
+    display: flex;
+    flex: 1;
+    background: var(--demo-color-neutral-300);
+    height: 1px;
+  }
+}
+

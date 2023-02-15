@@ -1,0 +1,12 @@
+<div class="checkbox-field">
+
+    <div class="checkbox-field__first-column">
+        <ng-content select="input[type=checkbox]"></ng-content>
+    </div>
+    <div (click)="click()" class="checkbox-field__second-column">
+        <ng-content select="label" #label></ng-content>
+        <ng-content select="[demo-checkbox-subtitle]"></ng-content>
+    </div>
+
+
+</div>

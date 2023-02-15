@@ -1,0 +1,59 @@
+<div class="image-upload">
+
+    <input
+        #input
+        hidden
+        type="file"
+        accept="image/png, image/gif, image/jpeg"
+        (change)="handleFileInputChange($event)"
+    >
+
+    <button
+        *ngIf="!((displayPreview$ | async) ||false)"
+        type="button"
+        class="image-upload__cover"
+        [class.image-upload__cover--has-error]="hasError"
+        (click)="input.click()"
+    >
+
+        <hero-icon name="photograph"></hero-icon>
+
+        <div
+            class="image-upload__cover__title"
+            *ngIf="titleText"
+        >
+            {{ titleText }}
+        </div>
+        <div
+            class="image-upload__cover__optional"
+            *ngIf="optional"
+            i18n
+        >
+            Optional
+        </div>
+
+    </button>
+
+    <div
+        *ngIf="displayPreview$ | async"
+        class="image-upload__preview"
+    >
+
+        <img
+            [src]="previewFileBase64$ | async"
+            alt
+        >
+
+        <div class="image-upload__preview__overlay">
+
+            <button
+                type="button"
+                (click)="clear()"
+            >
+                <hero-icon name="trash"></hero-icon>
+            </button>
+        </div>
+
+    </div>
+
+</div>

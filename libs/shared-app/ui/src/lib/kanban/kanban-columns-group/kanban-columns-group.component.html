@@ -1,0 +1,18 @@
+<div class="kanban-columns-group">
+
+    <button (click)="toggleOpen()" class="header" >
+
+        <div class="header__icon" [class.header__icon--open]="open$ | async">
+            <hero-icon name="chevron-right"></hero-icon>
+        </div>
+        <div class="header__name">
+            {{ name }}
+        </div>
+
+    </button>
+
+    <div *ngIf="open$ | async" class="content">
+        <ng-content select="demo-kanban-column"></ng-content>
+    </div>
+
+</div>

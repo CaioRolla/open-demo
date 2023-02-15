@@ -1,0 +1,104 @@
+<demo-wish-app-page-wrapper *ngIf="list$ | async as list"
+                           [pageTitle]="list.name"
+                           i18n-pageTitle>
+
+    <h1 demo-page-wrapper-title>
+        {{ list.name }}
+    </h1>
+
+    <div class="actions"
+         demo-page-wrapper-title-actions>
+
+
+        <button *ngIf="!navigatorShare"
+                demo-button
+                [cdkCopyToClipboard]="(listUrl$ | async) || ''"
+                (cdkCopyToClipboardCopied)="copiedToClipboard()">
+            <hero-icon demo-icon-prefix
+                       name="clipboard"></hero-icon>
+            <ng-container i18n>Copy URL</ng-container>
+        </button>
+
+        <button *ngIf="navigatorShare"
+                demo-button
+                (click)="onShareClicked(list)">
+            <hero-icon demo-icon-prefix name="share"></hero-icon>
+            <ng-container i18n>Share</ng-container>
+        </button>
+
+        <a demo-button
+           target="_blank"
+           [href]="'/' + list.slug">
+            <hero-icon demo-icon-prefix
+                       name="external-link"></hero-icon>
+            <ng-container i18n>Visit List</ng-container>
+        </a>
+
+
+
+    </div>
+
+
+    <div class="manage-list">
+
+        <div class="products">
+
+            <demo-tab-group [card]="false">
+                <demo-tab-header tabId="products">
+                    <hero-icon name="clipboard-list"
+                               demo-tab-header-prefix></hero-icon>
+                    <ng-container i18n>Products</ng-container>
+                </demo-tab-header>
+
+                <demo-tab-header tabId="appearence">
+                    <hero-icon name="color-swatch"
+                               demo-tab-header-prefix></hero-icon>
+                    <ng-container i18n>Appearence</ng-container>
+                </demo-tab-header>
+
+                <demo-tab-header tabId="settings">
+                    <hero-icon name="cog"
+                               demo-tab-header-prefix></hero-icon>
+                    <ng-container i18n>Settings</ng-container>
+                </demo-tab-header>
+
+
+                <demo-tab tabId="products">
+                    <demo-products-tab [listId]="listId"></demo-products-tab>
+                </demo-tab>
+
+                <demo-tab tabId="appearence">
+                    <demo-appearance-tab [listId]="listId"></demo-appearance-tab>
+                </demo-tab>
+
+                <demo-tab tabId="settings">
+                    <demo-settings-tab [listId]="listId"></demo-settings-tab>
+                </demo-tab>
+
+            </demo-tab-group>
+
+
+        </div>
+
+        <div *ngIf="previewList$ | async as previewList"
+             class="preview">
+            <demo-browser-frame>
+                <demo-list-theme-processor [isPreview]="true"
+                                          [name]="previewList.name"
+                                          [desc]="previewList.desc"
+                                          [slug]="previewList.slug"
+                                          [pix]="previewList.pix"
+                                          [bannerUrl]="previewList.banner?.accessUrl || null"
+                                          [profileUrl]="previewList.profile?.accessUrl || null"
+                                          [eventLocation]="previewList.eventLocation"
+                                          [eventDate]="previewList.eventDate"
+                                          [theme]="previewList.theme"
+                                          [products]="(previewProducts$ | async) || []"></demo-list-theme-processor>
+            </demo-browser-frame>
+
+
+        </div>
+
+    </div>
+
+</demo-wish-app-page-wrapper>

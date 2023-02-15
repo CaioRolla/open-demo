@@ -1,0 +1,60 @@
+:host {
+  width: 100%;
+  display: block;
+}
+
+
+::ng-deep .color-picker {
+  left: 18px !important;
+  top: 64px !important;
+  // transform: translateX(-100%) !important;
+}
+
+
+::ng-deep .arrow {
+  display: none !important;
+}
+
+.picker {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+
+  cursor: pointer;
+  border: 0;
+  background: none;
+
+  padding: 8px;
+
+}
+
+.square {
+  position: relative;
+
+  background: var(--demo-color-neutral-0);
+  border: 1px solid var(--demo-color-neutral-200);
+  border-radius: 4px;
+
+  height: 18px;
+  width: 18px;
+}
+
+.text {
+
+
+  &__simbol {
+    color: var(--demo-color-neutral-400);
+    font-weight: 300;
+    font-size: 14px;
+    margin-left: 6px;
+    margin-right: 2px;
+  }
+
+  &__color {
+    color: var(--demo-color-neutral-900);
+    font-weight: 400;
+    font-size: 14px;
+  }
+}

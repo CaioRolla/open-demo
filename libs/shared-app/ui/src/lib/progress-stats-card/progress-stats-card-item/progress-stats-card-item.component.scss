@@ -1,0 +1,45 @@
+.progress-stats-card-item {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    justify-content: center;
+
+    width: 60px;
+
+    &__value {
+      font-size: var(--demo-fs-400);
+      line-height: var(--demo-fs-400);
+      font-weight: 700;
+      color: var(--demo-color-neutral-700);
+    }
+
+    &__label {
+      font-size: var(--demo-fs-100);
+      line-height: var(--demo-fs-100);
+      color: var(--demo-color-neutral-400);
+      font-weight: 400;
+
+      &:empty {
+        display: none;
+      }
+    }
+  }
+
+  &__progress {
+    flex: 1;
+    margin-left: 8px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &::ng-deep .linear-progress {
+      height: 28px;
+    }
+  }
+}

@@ -1,0 +1,141 @@
+:host {
+  display: block;
+}
+
+.asset-upload {
+  display: flex;
+  flex-direction: column;
+
+  &__area {
+    width: 100%;
+    height: 140px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--demo-color-neutral-50);
+    border: 1px dashed var(--demo-color-neutral-300);
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      background: var(--demo-color-neutral-100);
+    }
+
+    hero-icon {
+      font-size: 26px;
+      color: var(--demo-color-neutral-500);
+    }
+
+    span {
+      margin-top: 22px;
+      font-size: 14px;
+      color: var(--demo-color-neutral-500);
+      font-weight: 300;
+    }
+  }
+
+  &__files {
+    display: flex;
+    flex-direction: column;
+    // padding: 0px 16px;
+
+
+
+    &__file {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background: var(--demo-color-neutral-0);
+      margin-top: 24px;
+
+      &--can-reorder {
+        cursor: move;
+        cursor: grab;
+      }
+
+      &__drag {
+        margin-right: 8px;
+      }
+
+      &__action {
+        button {
+          padding: 4px;
+          font-size: 16px;
+          line-height: 16px;
+        }
+      }
+
+      &__preview {
+        img {
+          width: 50px;
+          height: 50px;
+          object-fit: cover;
+          border-radius: 4px;
+        }
+      }
+
+      &__icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        background: var(--demo-color-primary-200);
+        border: 1px solid var(--demo-color-primary-500);
+        color: var(--demo-color-primary-500);
+
+        font-size: 12px;
+        line-height: 0px;
+        text-transform: uppercase;
+
+        &--image {
+          overflow: hidden;
+          background: var(--demo-color-neutral-100);
+          border: 1px solid var(--demo-color-neutral-300);
+
+          img {
+            min-height: 100%;
+            min-width: 100%;
+            height: auto;
+            width: auto;
+          }
+        }
+      }
+
+      &__info {
+        margin: 0px 16px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+
+        &__name {
+          overflow-wrap: break-word;
+          word-wrap: break-word;
+          word-break: break-word;
+          color: var(--demo-color-neutral-700);
+          font-weight: 500;
+          font-size: 14px;
+        }
+
+        &__progress {
+          margin: 4px 0px;
+        }
+
+        &__number {
+          color: var(--demo-color-neutral-400);
+          font-weight: 300;
+          font-size: 14px;
+        }
+      }
+    }
+
+
+  }
+}

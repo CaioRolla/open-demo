@@ -1,0 +1,226 @@
+<demo-wish-app-page-wrapper pageTitle="Dashboard"
+                           i18n-pageTitle>
+
+    <h1 *ngIf="!((displayEmptyMessage$ | async) || false)"
+        demo-page-wrapper-title
+        i18n>
+        Lists
+    </h1>
+
+
+    <div *ngIf="!((displayEmptyMessage$ | async) || false)"
+         demo-page-wrapper-title-actions>
+        <button type="button"
+                demo-primary-button
+                (click)="createListClicked()">
+            <hero-icon demo-icon-prefix
+                       name="plus"></hero-icon>
+            <ng-container i18n>Create List</ng-container>
+        </button>
+    </div>
+
+    <div class="home">
+
+        <div *ngIf="!((displayEmptyMessage$ | async) || false) else empty"
+             class="list-table">
+
+            <demo-stacked-list>
+                <demo-stacked-list-header>
+
+                    <div class="list-table-row">
+                        <div class="list-table-row__column list-table-row__column--avatar"
+                             i18n>
+
+                        </div>
+                        <div class="list-table-row__column"
+                             i18n>
+                            Name
+                        </div>
+
+                        <div class="list-table-row__column list-table-row__column--status"
+                             i18n>
+                            Status
+                        </div>
+
+                        <div class="list-table-row__column list-table-row__column--creation"
+                             i18n>
+                            Creation
+                        </div>
+
+                        <div class="list-table-row__column list-table-row__column--actions"
+                             i18n>
+                            <!-- Actions -->
+                        </div>
+
+                    </div>
+
+                </demo-stacked-list-header>
+
+                <ng-container ngProjectAs="demo-stacked-list-row"
+                              *ngIf="(loadingLists$ | async) || false">
+                    <demo-stacked-list-row *ngFor="let __ of [0, 1, 2, 3, 4, 5]">
+
+                        <div class="list-table-row">
+                            <div class="list-table-row__column list-table-row__column--avatar">
+                                <div demoLoadingPlaceholder
+                                     class="avatar"></div>
+                            </div>
+                            <div class="list-table-row__column list-table-row__column--info">
+                                <div demoLoadingPlaceholder
+                                     style="height: 12px; width: 10%;"></div>
+                                <div demoLoadingPlaceholder
+                                     style="height: 12px; width: 20%; margin-top: 8px;"></div>
+                            </div>
+
+                            <div class="list-table-row__column list-table-row__column--status">
+                                <div demoLoadingPlaceholder
+                                     style="height: 12px; width: 10%;"></div>
+                            </div>
+
+                            <div class="list-table-row__column list-table-row__column--creation">
+                                <div demoLoadingPlaceholder
+                                     style="height: 12px; width: 25%;"></div>
+                            </div>
+
+                            <div class="list-table-row__column list-table-row__column--actions">
+                                <div demoLoadingPlaceholder
+                                     style="height: 12px; width: 20px;"></div>
+                                <!-- <div demoLoadingPlaceholder
+                                     style="height: 12px; width: 20px; margin-left: 8px;"></div> -->
+                            </div>
+
+                        </div>
+                    </demo-stacked-list-row>
+                </ng-container>
+
+                <demo-stacked-list-row *ngIf="(displayEmptyMessage$ | async) || false">
+                    <div class="list-table-row">
+                        <div class="list-table-row__empty"
+                             i18n>
+                            You haven't sent any lists yet.
+                        </div>
+                    </div>
+                </demo-stacked-list-row>
+
+                <ng-container ngProjectAs="demo-stacked-list-row"
+                              *ngIf="!(loadingLists$ | async) || false">
+                    <demo-stacked-list-row *ngFor="let list of (listsResData$ | async)">
+                        <div [routerLink]="['/', 'list', list.id]"
+                             class="list-table-row">
+                            <div class="list-table-row__column list-table-row__column--avatar">
+                                <div class="avatar">
+                                    <img *ngIf="!list.profileUrl"
+                                         src="/assets/placeholder-avatar.png">
+                                    <img *ngIf="list.profileUrl"
+                                         [src]="list.profileUrl">
+                                </div>
+                            </div>
+                            <div class="list-table-row__column list-table-row__column--info">
+                                <h2>{{ list.name }}</h2>
+                                <p>{{ list.desc | truncate:[46] }}</p>
+                            </div>
+                            <div class="list-table-row__column list-table-row__column--status">
+
+                                <ng-container [ngSwitch]="list.status">
+                                    <ng-container *ngSwitchCase="ListStatus.ACTIVE">
+                                        <span demoChip="success"
+                                              i18n>Active</span>
+                                    </ng-container>
+                                    <ng-container *ngSwitchCase="ListStatus.STOPPED">
+                                        <span demoChip="danger"
+                                              i18n>Stopped</span>
+                                    </ng-container>
+                                </ng-container>
+
+                            </div>
+
+                            <div class="list-table-row__column list-table-row__column--creation">{{ list.createdAt | date: 'short' }}</div>
+
+
+                            <div class="list-table-row__column  list-table-row__column--actions">
+
+                                <button demo-text-neutral-button
+                                        [demoMenu]="actions"
+                                        (click)="$event.stopPropagation()">
+                                    <hero-icon name="dots-vertical"></hero-icon>
+                                </button>
+
+                                <ng-template #actions>
+
+
+                                    <a [routerLink]="['/', 'list', list.id]"
+                                       demo-button>
+                                        <hero-icon demo-icon-prefix
+                                                   name="pencil"></hero-icon>
+                                        <ng-container i18n>Manage List</ng-container>
+
+                                    </a>
+
+                                    <a [href]="'/' + list.slug"
+                                       target="_blank"
+                                       demo-button>
+                                        <hero-icon demo-icon-prefix
+                                                   name="external-link"></hero-icon>
+                                        <ng-container i18n>Visit List</ng-container>
+                                    </a>
+
+
+                                    <demo-menu-separator-item></demo-menu-separator-item>
+
+                                    <button demo-text-danger-button
+                                            (click)="deleteListClicked(list)">
+                                        <hero-icon demo-icon-prefix
+                                                   name="trash"></hero-icon>
+                                        <ng-container i18n>Delete List</ng-container>
+                                    </button>
+                                </ng-template>
+
+                            </div>
+                        </div>
+                    </demo-stacked-list-row>
+                </ng-container>
+
+                <demo-paginator [totalCount]="(paginatedListsCount$ | async) || 0"
+                               [showingCount]="(listsResDataCount$ | async) || 0"
+                               [disableNext]="(disableNextLists$ | async) || false"
+                               [disablePrevious]="(disablePreviousLists$ | async) || false"
+                               [loading]="(loadingListsSilently$ | async) || false"
+                               (nextClicked)="nextLists()"
+                               (previousClicked)="previousLists()"></demo-paginator>
+            </demo-stacked-list>
+
+
+        </div>
+
+    </div>
+
+    <ng-template #empty>
+        <demo-empty-state>
+            <ng-container demo-empty-state-image>
+                <img src="assets/illustrations/undraw_dreamer_gxxi.svg"
+                     alt="Nenhuma lista cadastrada">
+            </ng-container>
+            <ng-container demo-empty-state-title
+                          i18n>
+                You don't have any lists yet
+            </ng-container>
+            <ng-container demo-empty-state-subtitle
+                          i18n>
+                Create a list and start receiving gifts from your friends!
+            </ng-container>
+            <ng-container demo-empty-state-actions>
+
+                <button demo-primary-button
+                        (click)="createListClicked()">
+
+                    <hero-icon demo-icon-prefix
+                               name="plus"></hero-icon>
+                    <ng-container i18n>Create List</ng-container>
+                </button>
+            </ng-container>
+        </demo-empty-state>
+    </ng-template>
+
+
+
+</demo-wish-app-page-wrapper>

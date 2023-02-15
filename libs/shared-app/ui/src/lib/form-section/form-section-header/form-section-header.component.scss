@@ -1,0 +1,42 @@
+:host {
+  display: block;
+}
+
+.form-section-header {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 36px;
+  max-width: calc(var(--demo-content-container) / 1.6);
+
+  &__title {
+    display: none;
+    &:not(:empty) {
+      display: flex;
+    }
+
+    ::ng-deep * {
+      margin: 0;
+      padding: 0;
+      font-size: var(--demo-fs-500);
+      color: var(--demo-color-neutral-600);
+      font-weight: 600;
+    }
+  }
+
+  &__subtitle {
+    display: none;
+
+    &:not(:empty) {
+      display: flex;
+    }
+
+    ::ng-deep * {
+      margin: 0;
+      padding: 0;
+      font-size: var(--demo-fs-200);
+      color: var(--demo-color-neutral-500);
+      font-weight: 400;
+    }
+  }
+}

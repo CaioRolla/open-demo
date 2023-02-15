@@ -1,0 +1,120 @@
+:host {
+  display: block;
+}
+
+.manage-team {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  &__container {
+    width: 100%;
+    // max-width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 24px;
+  }
+}
+
+.invite-table-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+
+  &__empty {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__column {
+    flex: 5;
+    display: flex;
+    flex-direction: row;
+
+    &--email {
+      flex: 15;
+    }
+
+    &--actions {
+      flex: 3;
+
+      button {
+        padding: 2px;
+        font-size: 10px;
+
+        &:disabled {
+          opacity: 0.2;
+        }
+
+        &:not(&:first-child) {
+          margin-left: 6px;
+        }
+
+        hero-icon {
+          height: 16px !important;
+        }
+      }
+    }
+  }
+}
+
+.create-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  grid-gap: 16px;
+
+  &__email {
+    flex: 4;
+    max-width: 400px;
+  }
+
+  &__spacer {
+    flex: 1;
+  }
+
+  &__permissions {
+    font-size: var(--demo-fs-200);
+    font-weight: 400;
+  }
+
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+    align-items: flex-start;
+
+    &__email {
+      flex: unset;
+      max-width: 100%;
+      width: 100%;
+    }
+  
+
+    &__submit {
+      display: none;
+    }
+  }
+}
+
+demo-card-actions-footer {
+  display: none;
+
+  @media screen and (max-width: 800px) {
+    display: block;
+  }
+}
+
+
+.create-form-footer {
+  display: none;
+  
+  flex-direction: row;
+  justify-content: flex-end;
+  
+
+  @media screen and (max-width: 800px) {
+    display: flex;
+  }
+}

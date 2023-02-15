@@ -1,0 +1,58 @@
+<demo-card>
+    <demo-card-simple-header>
+        <ng-container i18n>Create List</ng-container>
+    </demo-card-simple-header>
+
+    <div class="create-list">
+        <form class="create-list__content"
+              [formGroup]="form">
+            <demo-form-field>
+                <label for="listName"
+                       demo-label
+                       i18n>
+                    Name
+                </label>
+                <input name="listName"
+                       formControlName="name"
+                       type="text"
+                       demo-input
+                       maxlength="255">
+                <demo-error *ngIf="nameControl.hasError('required')">
+                    <ng-container i18n>Your list must have a name</ng-container>
+                </demo-error>
+            </demo-form-field>
+
+            <demo-form-field class="full-width">
+                <label for="listDesc"
+                       [optional]="true"
+                       demo-label
+                       i18n>
+                    Description
+                </label>
+                <textarea name="listDesc"
+                          formControlName="desc"
+                          type="text"
+                          demo-input
+                          rows="4"
+                          maxlength="500"></textarea>
+
+            </demo-form-field>
+        </form>
+    </div>
+
+    <demo-card-actions-footer>
+        <button demo-text-neutral-button
+                i18n
+                (click)="onCancel()">
+            Cancel
+        </button>
+
+        <button type="button"
+                demo-primary-button
+                (click)="onSubmit()"
+                [loading]="(creatingList$ | async) || false"
+                i18n>
+            Next
+        </button>
+    </demo-card-actions-footer>
+</demo-card>

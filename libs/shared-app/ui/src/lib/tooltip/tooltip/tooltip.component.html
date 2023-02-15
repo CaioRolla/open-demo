@@ -1,0 +1,14 @@
+<div
+    @tooltip
+    *ngIf="template"
+    class="tooltip tooltip--{{type}} tooltip--template"
+>
+    <ng-container [ngTemplateOutlet]="template"></ng-container>
+</div>
+<div
+    @tooltip
+    *ngIf="text"
+    class="tooltip tooltip--{{type}} tooltip--text"
+>
+    {{ text }}
+</div>

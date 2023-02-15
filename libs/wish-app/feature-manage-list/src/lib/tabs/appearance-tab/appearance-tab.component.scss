@@ -1,0 +1,82 @@
+:host {
+  display: block;
+}
+
+.appearance-tab {
+  display: flex;
+  flex-direction: column;
+  padding-top: 14px;
+}
+
+.form {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+
+  &__color,
+  &__background,
+  &__border-color {
+    max-width: 260px;
+  }
+
+  &__header-direction {
+    ::ng-deep .radio-card-group__content {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__banner-image,
+  &__profile-image {
+    demo-asset-upload {
+      margin-top: 8px;
+    }
+  }
+
+  &__profile-image {
+    margin-top: 24px;
+  }
+}
+
+.header-preview {
+  min-width: 100%;
+  width: 100%;
+
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+
+  z-index: 0;
+
+  &__banner {
+    position: absolute;
+    width: 100%;
+    height: 45px;
+    background: var(--demo-color-neutral-200);
+    border-radius: 4px;
+  }
+
+  &__profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background: var(--demo-color-neutral-200);
+    border: 2px solid white;
+
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0%);
+
+    &--left {
+      left: 0;
+      transform: translate(50%, 0%);
+    }
+  }
+}

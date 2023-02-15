@@ -1,0 +1,42 @@
+:host {
+  position: relative;
+  height: 100%;
+  width: 64px;
+  border-radius: 0px;
+  border: none;
+  line-height: 0;
+  user-select: none;
+  background: var(--demo-color-neutral-0);
+  color: var(--demo-color-neutral-600);
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+  outline: unset;
+  font-size: 16px;
+
+  &:hover,
+  &:focus {
+    background: var(--demo-color-neutral-100);
+  }
+
+  ::ng-deep hero-icon {
+    height: 24px !important;
+    width: auto !important;
+  }
+}
+
+.badge {
+  display: inline;
+  position: absolute;
+  top: 10px;
+  right: 8px;
+
+  &__content {
+    display: inline;
+    position: relative;
+    color: var(--demo-color-danger-0);
+    background: var(--demo-color-danger-500);
+    font-size: 10px;
+    padding: 2px 4px;
+    border-radius: 4px;
+  }
+}

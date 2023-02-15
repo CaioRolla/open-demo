@@ -1,0 +1,16 @@
+:host {
+  display: block;
+}
+
+.kanban-column {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 16px;
+  width: 280px;
+
+  // Only needed for BG
+  border-radius: 8px;
+  background: var(--demo-color-neutral-100);
+  height: 100%;
+  padding: 12px;
+}

@@ -1,0 +1,37 @@
+.auth-merch {
+  // background-image: linear-gradient(
+  //   90deg,
+  //   var(--demo-color-neutral-800),
+  //   var(--demo-color-neutral-900)
+  // );
+
+  background: var(--demo-color-neutral-50);
+
+  &__container {
+    width: 100vw;
+    height: 100vh;
+    padding: 16px;
+
+    background: url('/assets/color-particles-2.svg') no-repeat
+      center center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    h1 {
+      color: var(--demo-color-neutral-700);
+      font-size: var(--demo-fs-700);
+      font-weight: 800;
+    }
+
+    h2 {
+      color: var(--demo-color-neutral-500);
+      font-size: var(--demo-fs-400);
+      font-weight: 300;
+    }
+  }
+}

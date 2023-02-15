@@ -1,0 +1,87 @@
+@import '~@angular/cdk/overlay-prebuilt.css';
+
+@import 'reset';
+
+* {
+  color: var(--clr-neutral-100);
+  font-family: Inter, sans-serif;
+}
+
+// h1 {
+//   font-size: var(--demo-fs-700);
+//   font-weight: 800;
+// }
+
+// h2 {
+//   font-size: var(--demo-fs-600);
+//   font-weight: 800;
+// }
+
+// h3 {
+//   font-size: var(--demo-fs-500);
+//   font-weight: 800;
+// }
+
+// h4 {
+//   font-size: var(--demo-fs-400);
+//   font-weight: 800;
+// }
+
+// h5 {
+//   font-size: var(--demo-fs-400);
+//   font-weight: 800;
+// }
+
+// p {
+//   font-size: var(--demo-fs-400);
+//   font-weight: 500;
+// }
+
+a {
+  text-decoration: none;
+  color: var(--demo-color-primary-600);
+}
+
+// Utilities
+.transparent-backdrop {
+  background: transparent !important;
+  backdrop-filter: none !important;
+}
+
+.cdk-overlay-backdrop {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+}
+
+.dialog-disable-backdrop-click {
+  pointer-events: none;
+}
+
+.demo-badge {
+  position: relative;
+  overflow: visible !important;
+
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.ql-snow {
+  border: none !important;
+}
+
+quill-editor {
+  display: block;
+  background: var(--demo-color-neutral-0) !important;
+  border: 1px solid var(--demo-color-neutral-300) !important;
+  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px !important;
+  border-radius: 8px !important;
+
+  &:focus-within {
+    border-color: var(--demo-color-primary-500) !important;
+    box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px, var(--demo-color-primary-500) 0px 0px 0px 1px,
+      rgba(0, 0, 0, 0) 0px 0px 0px 0px !important;
+  }
+}

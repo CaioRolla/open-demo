@@ -1,0 +1,41 @@
+:host {
+  display: inline-block;
+}
+
+.chip {
+  display: inline-block;
+  height: min-content;
+  width: fit-content;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: var(--demo-color-neutral-100);
+  color: var(--demo-color-neutral-500);
+
+  font-size: 12px;
+  font-weight: 300;
+
+  &--primary {
+    background: var(--demo-color-primary-100);
+    color: var(--demo-color-primary-500);
+  }
+
+  &--secondary {
+    background: var(--demo-color-secondary-100);
+    color: var(--demo-color-secondary-900);
+  }
+
+  &--success {
+    background: var(--demo-color-success-100);
+    color: var(--demo-color-success-900);
+  }
+
+  &--danger {
+    background: var(--demo-color-danger-100);
+    color: var(--demo-color-danger-900);
+  }
+
+  &--warning {
+    background: var(--demo-color-warning-100);
+    color: var(--demo-color-warning-900);
+  }
+}

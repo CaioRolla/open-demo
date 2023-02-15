@@ -1,0 +1,1000 @@
+{
+  "version": 2,
+  "projects": {
+    "+asset-core": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+      "root": "libs/+asset/core",
+      "sourceRoot": "libs/+asset/core/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/+asset/core/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/libs/+asset/core"],
+          "options": {
+            "jestConfig": "libs/+asset/core/jest.config.ts",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "+asset-server": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+      "root": "libs/+asset/server",
+      "sourceRoot": "libs/+asset/server/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/+asset/server/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/libs/+asset/server"],
+          "options": {
+            "jestConfig": "libs/+asset/server/jest.config.ts",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "+discussion-core": {
+      "root": "libs/+discussion/core",
+      "sourceRoot": "libs/+discussion/core/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/+discussion/core/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+          "options": {
+            "jestConfig": "libs/+discussion/core/jest.config.ts",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "+discussion-server": {
+      "root": "libs/+discussion/server",
+      "sourceRoot": "libs/+discussion/server/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/+discussion/server/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+          "options": {
+            "jestConfig": "libs/+discussion/server/jest.config.ts",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "+notification-core": {
+      "root": "libs/+notification/core",
+      "sourceRoot": "libs/+notification/core/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/+notification/core/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/libs/+notification/core"],
+          "options": {
+            "jestConfig": "libs/+notification/core/jest.config.ts",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "+notification-server": {
+      "root": "libs/+notification/server",
+      "sourceRoot": "libs/+notification/server/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/+notification/server/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/libs/+notification/server"],
+          "options": {
+            "jestConfig": "libs/+notification/server/jest.config.ts",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "health-server": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+      "root": "libs/+health/server",
+      "sourceRoot": "libs/+health/server/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/+health/server/**/*.ts"]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/libs/+health/server"],
+          "options": {
+            "jestConfig": "libs/+health/server/jest.config.ts",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "notification-app": {
+      "projectType": "library",
+      "root": "libs/+notification/app",
+      "sourceRoot": "libs/+notification/app/src",
+      "prefix": "demo",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/libs/+notification/app"],
+          "options": {
+            "jestConfig": "libs/+notification/app/jest.config.ts",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/+notification/app/**/*.ts", "libs/+notification/app/**/*.html"]
+          }
+        }
+      },
+      "tags": []
+    },
+    "shared-app-forms": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+      "projectType": "library",
+      "root": "libs/shared-app/forms",
+      "sourceRoot": "libs/shared-app/forms/src",
+      "prefix": "demo",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/libs/shared-app/forms"],
+          "options": {
+            "jestConfig": "libs/shared-app/forms/jest.config.ts",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shared-app/forms/src/**/*.ts", "libs/shared-app/forms/src/**/*.html"]
+          },
+          "outputs": ["{options.outputFile}"]
+        }
+      },
+      "tags": []
+    },
+    "shared-app-ui": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+      "projectType": "library",
+      "root": "libs/shared-app/ui",
+      "sourceRoot": "libs/shared-app/ui/src",
+      "prefix": "demo",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/libs/shared-app/ui"],
+          "options": {
+            "jestConfig": "libs/shared-app/ui/jest.config.ts",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shared-app/ui/src/**/*.ts", "libs/shared-app/ui/src/**/*.html"]
+          },
+          "outputs": ["{options.outputFile}"]
+        }
+      },
+      "tags": []
+    },
+    "shared-app-utils": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+      "projectType": "library",
+      "root": "libs/shared-app/utils",
+      "sourceRoot": "libs/shared-app/utils/src",
+      "prefix": "demo",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/libs/shared-app/utils"],
+          "options": {
+            "jestConfig": "libs/shared-app/utils/jest.config.ts",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shared-app/utils/src/**/*.ts", "libs/shared-app/utils/src/**/*.html"]
+          },
+          "outputs": ["{options.outputFile}"]
+        }
+      },
+      "tags": []
+    },
+    "shared-server-beew": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+      "root": "libs/shared-server/beew",
+      "sourceRoot": "libs/shared-server/beew/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/shared-server/beew/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/libs/shared-server/beew"],
+          "options": {
+            "jestConfig": "libs/shared-server/beew/jest.config.ts",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "shared-server-email-list": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+      "root": "libs/shared-server/email-list",
+      "sourceRoot": "libs/shared-server/email-list/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shared-server/email-list/**/*.ts"]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/libs/shared-server/email-list"],
+          "options": {
+            "jestConfig": "libs/shared-server/email-list/jest.config.ts",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "shared-server-logging": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+      "root": "libs/shared-server/logging",
+      "sourceRoot": "libs/shared-server/logging/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shared-server/logging/**/*.ts"]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/libs/shared-server/logging"],
+          "options": {
+            "jestConfig": "libs/shared-server/logging/jest.config.ts",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "shared-server-shopee": {
+      "root": "libs/shared-server/shopee",
+      "sourceRoot": "libs/shared-server/shopee/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/shared-server/shopee/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/libs/shared-server/shopee"],
+          "options": {
+            "jestConfig": "libs/shared-server/shopee/jest.config.ts",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "shared-server-sitemap": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+      "root": "libs/shared-server/sitemap",
+      "sourceRoot": "libs/shared-server/sitemap/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shared-server/sitemap/**/*.ts"]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/libs/shared-server/sitemap"],
+          "options": {
+            "jestConfig": "libs/shared-server/sitemap/jest.config.ts",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "shared-server-stripe": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+      "root": "libs/shared-server/stripe",
+      "sourceRoot": "libs/shared-server/stripe/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shared-server/stripe/**/*.ts"]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/libs/shared-server/stripe"],
+          "options": {
+            "jestConfig": "libs/shared-server/stripe/jest.config.ts",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "shared-server-upload": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+      "root": "libs/shared-server/upload",
+      "sourceRoot": "libs/shared-server/upload/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/shared-server/upload/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/libs/shared-server/upload"],
+          "options": {
+            "jestConfig": "libs/shared-server/upload/jest.config.ts",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "shared-server-utils": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+      "root": "libs/shared-server/utils",
+      "sourceRoot": "libs/shared-server/utils/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shared-server/utils/**/*.ts"]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/libs/shared-server/utils"],
+          "options": {
+            "jestConfig": "libs/shared-server/utils/jest.config.ts",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "shared-utils": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+      "root": "libs/shared/utils",
+      "sourceRoot": "libs/shared/utils/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shared/utils/**/*.ts"]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/libs/shared/utils"],
+          "options": {
+            "jestConfig": "libs/shared/utils/jest.config.ts",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "wish-app": {
+      "$schema": "../../node_modules/nx/schemas/project-schema.json",
+      "projectType": "application",
+      "root": "apps/wish-app",
+      "sourceRoot": "apps/wish-app/src",
+      "prefix": "demo",
+      "i18n": {
+        "sourceLocale": "en",
+        "locales": {
+          "pt": {
+            "translation": "apps/wish-app/locale/messages.pt.xlf",
+            "baseHref": "pt/"
+          }
+        }
+      },
+      "targets": {
+        "build": {
+          "executor": "@angular-devkit/build-angular:browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/wish-app/browser",
+            "index": "apps/wish-app/src/index.html",
+            "main": "apps/wish-app/src/main.ts",
+            "polyfills": "apps/wish-app/src/polyfills.ts",
+            "tsConfig": "apps/wish-app/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": ["apps/wish-app/src/favicon.ico", "apps/wish-app/src/assets"],
+            "styles": ["libs/shared-app/ui/src/styles.scss", "apps/wish-app/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "localize": true,
+              "aot": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/wish-app/src/environments/environment.ts",
+                  "with": "apps/wish-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "localize": ["pt"],
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "executor": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "wish-app:build:production"
+            },
+            "development": {
+              "browserTarget": "wish-app:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "executor": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "wish-app:build"
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/wish-app/src/**/*.ts", "apps/wish-app/src/**/*.html"]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/apps/wish-app"],
+          "options": {
+            "jestConfig": "apps/wish-app/jest.config.ts",
+            "passWithNoTests": true
+          }
+        },
+        "server": {
+          "dependsOn": ["build"],
+          "executor": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/apps/wish-app/server",
+            "main": "apps/wish-app/server.ts",
+            "tsConfig": "apps/wish-app/tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "apps/wish-app/src/environments/environment.ts",
+                  "with": "apps/wish-app/src/environments/environment.prod.ts"
+                }
+              ]
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "executor": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "wish-app:build:development",
+              "serverTarget": "wish-app:server:development"
+            },
+            "production": {
+              "browserTarget": "wish-app:build:production",
+              "serverTarget": "wish-app:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "executor": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": ["/"]
+          },
+          "configurations": {
+            "development": {
+              "browserTarget": "wish-app:build:development",
+              "serverTarget": "wish-app:server:development"
+            },
+            "production": {
+              "browserTarget": "wish-app:build:production",
+              "serverTarget": "wish-app:server:production"
+            }
+          },
+          "defaultConfiguration": "production"
+        }
+      },
+      "tags": []
+    },
+    "wish-app-application": {
+      "projectType": "library",
+      "root": "libs/wish-app/application",
+      "sourceRoot": "libs/wish-app/application/src",
+      "prefix": "demo",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/libs/wish-app/application"],
+          "options": {
+            "jestConfig": "libs/wish-app/application/jest.config.ts",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/wish-app/application/**/*.ts", "libs/wish-app/application/**/*.html"]
+          }
+        }
+      },
+      "tags": []
+    },
+    "wish-app-feature-auth-merch": {
+      "projectType": "library",
+      "root": "libs/wish-app/feature-auth-merch",
+      "sourceRoot": "libs/wish-app/feature-auth-merch/src",
+      "prefix": "demo",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/libs/wish-app/feature-auth-merch"],
+          "options": {
+            "jestConfig": "libs/wish-app/feature-auth-merch/jest.config.ts",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/wish-app/feature-auth-merch/**/*.ts",
+              "libs/wish-app/feature-auth-merch/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "wish-app-feature-create-list": {
+      "projectType": "library",
+      "root": "libs/wish-app/feature-create-list",
+      "sourceRoot": "libs/wish-app/feature-create-list/src",
+      "prefix": "demo",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/libs/wish-app/feature-create-list"],
+          "options": {
+            "jestConfig": "libs/wish-app/feature-create-list/jest.config.ts",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/wish-app/feature-create-list/**/*.ts",
+              "libs/wish-app/feature-create-list/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "wish-app-feature-delete-list": {
+      "projectType": "library",
+      "root": "libs/wish-app/feature-delete-list",
+      "sourceRoot": "libs/wish-app/feature-delete-list/src",
+      "prefix": "demo",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/libs/wish-app/feature-delete-list"],
+          "options": {
+            "jestConfig": "libs/wish-app/feature-delete-list/jest.config.ts",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/wish-app/feature-delete-list/**/*.ts",
+              "libs/wish-app/feature-delete-list/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "wish-app-feature-delete-product": {
+      "projectType": "library",
+      "root": "libs/wish-app/feature-delete-product",
+      "sourceRoot": "libs/wish-app/feature-delete-product/src",
+      "prefix": "demo",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/libs/wish-app/feature-delete-product"],
+          "options": {
+            "jestConfig": "libs/wish-app/feature-delete-product/jest.config.ts",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/wish-app/feature-delete-product/**/*.ts",
+              "libs/wish-app/feature-delete-product/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "wish-app-feature-home": {
+      "projectType": "library",
+      "root": "libs/wish-app/feature-home",
+      "sourceRoot": "libs/wish-app/feature-home/src",
+      "prefix": "demo",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/libs/wish-app/feature-home"],
+          "options": {
+            "jestConfig": "libs/wish-app/feature-home/jest.config.ts",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/wish-app/feature-home/**/*.ts", "libs/wish-app/feature-home/**/*.html"]
+          }
+        }
+      },
+      "tags": []
+    },
+    "wish-app-feature-manage-list": {
+      "projectType": "library",
+      "root": "libs/wish-app/feature-manage-list",
+      "sourceRoot": "libs/wish-app/feature-manage-list/src",
+      "prefix": "demo",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/libs/wish-app/feature-manage-list"],
+          "options": {
+            "jestConfig": "libs/wish-app/feature-manage-list/jest.config.ts",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/wish-app/feature-manage-list/**/*.ts",
+              "libs/wish-app/feature-manage-list/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "wish-app-feature-platform-product-clone": {
+      "projectType": "library",
+      "root": "libs/wish-app/feature-platform-product-clone",
+      "sourceRoot": "libs/wish-app/feature-platform-product-clone/src",
+      "prefix": "demo",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/libs/wish-app/feature-platform-product-clone"],
+          "options": {
+            "jestConfig": "libs/wish-app/feature-platform-product-clone/jest.config.ts",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/wish-app/feature-platform-product-clone/**/*.ts",
+              "libs/wish-app/feature-platform-product-clone/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "wish-app-feature-public-list": {
+      "projectType": "library",
+      "root": "libs/wish-app/feature-public-list",
+      "sourceRoot": "libs/wish-app/feature-public-list/src",
+      "prefix": "demo",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/libs/wish-app/feature-public-list"],
+          "options": {
+            "jestConfig": "libs/wish-app/feature-public-list/jest.config.ts",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/wish-app/feature-public-list/**/*.ts",
+              "libs/wish-app/feature-public-list/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "wish-app-feature-save-product": {
+      "projectType": "library",
+      "root": "libs/wish-app/feature-save-product",
+      "sourceRoot": "libs/wish-app/feature-save-product/src",
+      "prefix": "demo",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/libs/wish-app/feature-save-product"],
+          "options": {
+            "jestConfig": "libs/wish-app/feature-save-product/jest.config.ts",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/wish-app/feature-save-product/**/*.ts",
+              "libs/wish-app/feature-save-product/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "wish-app-ui": {
+      "projectType": "library",
+      "root": "libs/wish-app/ui",
+      "sourceRoot": "libs/wish-app/ui/src",
+      "prefix": "demo",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/libs/wish-app/ui"],
+          "options": {
+            "jestConfig": "libs/wish-app/ui/jest.config.ts",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/wish-app/ui/**/*.ts", "libs/wish-app/ui/**/*.html"]
+          }
+        }
+      },
+      "tags": []
+    },
+    "wish-server": {
+      "$schema": "../../node_modules/nx/schemas/project-schema.json",
+      "root": "apps/wish-server",
+      "sourceRoot": "apps/wish-server/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/webpack:webpack",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/wish-server",
+            "main": "apps/wish-server/src/main.ts",
+            "tsConfig": "apps/wish-server/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "libs/+auth/server/src/email-templates",
+                "output": "./email-templates/"
+              },
+              "apps/wish-server/src/assets",
+              "apps/wish-server/src/email-templates"
+            ],
+            "target": "node",
+            "compiler": "tsc"
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/wish-server/src/environments/environment.ts",
+                  "with": "apps/wish-server/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/node:node",
+          "options": {
+            "buildTarget": "wish-server:build"
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/wish-server/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/apps/wish-server"],
+          "options": {
+            "jestConfig": "apps/wish-server/jest.config.ts",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "wish-shared-core": {
+      "root": "libs/wish-shared/core",
+      "sourceRoot": "libs/wish-shared/core/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/wish-shared/core/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/libs/wish-shared/core"],
+          "options": {
+            "jestConfig": "libs/wish-shared/core/jest.config.ts",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    }
+  },
+  "defaultProject": "cron-app"
+}

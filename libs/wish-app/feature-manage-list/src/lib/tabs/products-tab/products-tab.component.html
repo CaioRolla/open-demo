@@ -1,0 +1,204 @@
+<div class="products-tab">
+
+
+    <div class="products-tab__product">
+
+        <demo-stacked-list>
+            <demo-stacked-list-header>
+                <div class="product-table-header">
+                    <div class="product-table-header__title"
+                         i18n>Your Products
+                    </div>
+
+
+                    <div class="product-table-header__actions">
+                        <button demo-text-primary-button
+                                (click)="recommendedProductClicked()"
+                                i18n>
+                            Recommended
+                        </button>
+
+                        <button demo-primary-button
+                                (click)="createProductClicked()">
+                            <hero-icon demo-icon-prefix
+                                       name="plus"></hero-icon>
+                            <ng-container i18n>Product</ng-container>
+                        </button>
+                    </div>
+                </div>
+            </demo-stacked-list-header>
+
+            <ng-container ngProjectAs="demo-stacked-list-row"
+                          *ngIf="(loadingProducts$ | async) || false">
+                <demo-stacked-list-row *ngFor="let __ of [0, 1, 2, 3, 4, 5]">
+
+                    <div class="product-table-row">
+                        <div class="product-table-row__image"
+                             demoLoadingPlaceholder>
+                        </div>
+
+                        <div class="product-table-row__info">
+                            <div demoLoadingPlaceholder
+                                 style="height: 12px; width: 10%;"></div>
+                            <div demoLoadingPlaceholder
+                                 style="height: 12px; width: 20%; margin-top: 8px;"></div>
+                        </div>
+
+                        <div class="product-table-row__actions">
+                            <div demoLoadingPlaceholder
+                                 style="height: 12px; width: 20px;"></div>
+                        </div>
+
+                    </div>
+
+                </demo-stacked-list-row>
+            </ng-container>
+
+            <ng-container ngProjectAs="demo-stacked-list-row"
+                          *ngIf="!(loadingProducts$ | async)">
+
+                <demo-stacked-list-row>
+                    <div class="product-table-search-row">
+
+                        <div class="product-table-search-row__count"
+                             i18n>
+                            {{ filteredProductsCount$ | async }} products
+                        </div>
+
+                        <div class="product-table-search-row__search">
+                            <demo-form-field>
+                                <!-- <label for="productSearch"
+                                       demo-label
+                                       i18n>
+                                    Search
+                                </label> -->
+                                <input name="productSearch"
+                                       [formControl]="searchControl"
+                                       type="text"
+                                       demo-input>
+
+
+                                <button *ngIf="!searchControl.value"
+                                        demo-button
+                                        demo-input-suffix
+                                        disabled>
+                                    <hero-icon name="search"></hero-icon>
+                                </button>
+
+                                <button *ngIf="searchControl.value"
+                                        demo-button
+                                        demo-input-suffix
+                                        (click)="searchControl.patchValue(null)">
+                                    <hero-icon name="x"></hero-icon>
+                                </button>
+                                <demo-hint>
+                                    <ng-container i18n>Search for products currently in your list.</ng-container>
+                                </demo-hint>
+                            </demo-form-field>
+                        </div>
+
+                    </div>
+
+                </demo-stacked-list-row>
+                <demo-stacked-list-row *ngFor="let product of filteredProducts$ | async;trackBy:trackByProductId">
+
+                    <div class="product-table-row">
+                        <div class="product-table-row__image"
+                             demoLoadingPlaceholder>
+                            <img *ngIf="product.previewUrl"
+                                 [src]="product.previewUrl"
+                                 loading="lazy"
+                                 class="animation"
+                                 onload="this.classList.remove('animation')">
+                        </div>
+
+                        <!-- <ng-container *ngIf="product.person">
+
+                        {{ product.person.email | gravatar }}
+
+                    </ng-container> -->
+
+
+                        <div class="product-table-row__info">
+                            <h2>{{ product.name | truncate:[26] }}</h2>
+                            <p>{{ product.desc | truncate:[38] }}</p>
+                        </div>
+
+                        <div class="product-table-row__person person">
+
+                            <ng-container *ngIf="product.person">
+                                <img [demoTooltip]="product.person.name"
+                                     [src]="product.person.email | gravatar"
+                                     onerror="this.src='/assets/placeholder-avatar.png'"
+                                     loading="lazy"
+                                     class="animation"
+                                     onload="this.classList.remove('animation')" />
+
+                                <div class="person__info">
+                                    <h3>{{ product.person.name }} </h3>
+                                    <p>{{ product.person.email }}</p>
+                                </div>
+
+                            </ng-container>
+
+                        </div>
+
+                        <div class="product-table-row__actions">
+
+                            <button demo-text-neutral-button
+                                    [demoMenu]="actions">
+                                <hero-icon name="dots-vertical"></hero-icon>
+                            </button>
+
+                            <ng-template #actions>
+
+                                <button demo-button
+                                        (click)="editProductClicked(product.id)">
+
+                                    <hero-icon demo-icon-prefix
+                                               name="pencil"></hero-icon>
+                                    <ng-container i18n>Edit product</ng-container>
+                                </button>
+
+                                <demo-menu-separator-item></demo-menu-separator-item>
+
+                                <button
+                                        demo-text-danger-button
+                                        (click)="deleteProductClicked(product)">
+                                    <hero-icon demo-icon-prefix
+                                               name="x"></hero-icon>
+                                    <ng-container i18n>Delete product</ng-container>
+                                </button>
+
+                            </ng-template>
+
+
+
+                        </div>
+
+                    </div>
+
+                </demo-stacked-list-row>
+
+            </ng-container>
+
+            <demo-stacked-list-row *ngIf="displayEmptyMessage$ | async">
+
+                <div *ngIf="!(productsSearchQuery$ | async)"
+                     class="product-table-empty"
+                     i18n>You don't have any products yet. <a (click)="createProductClicked()"
+                       href="javascript:">Click here</a> to add products manually or check out our <a (click)="recommendedProductClicked()"
+                       href="javascript:">recommended products</a></div>
+
+                <div *ngIf="!!(productsSearchQuery$ | async)"
+                     class="product-table-empty"
+                     i18n>Search does not match any product.</div>
+
+            </demo-stacked-list-row>
+        </demo-stacked-list>
+
+    </div>
+
+
+
+</div>

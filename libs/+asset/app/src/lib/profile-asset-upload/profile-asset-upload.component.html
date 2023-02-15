@@ -1,0 +1,55 @@
+<input #input
+       type="file"
+       name="asset"
+       enctype="multipart/form-data"
+       [accept]="accept"
+       (change)="inputChanged($any($event.target)?.files)"
+       (blur)="onTouched()"
+       [disabled]="disabled$ | async"
+       hidden>
+
+<div *ngIf="data$ | async as data"
+     cdkDropListGroup
+     class="asset-upload" >
+
+    <ng-container *ngIf="data[0] as d; else emptyState">
+
+        
+
+        <img *ngIf="d && d.asset"
+             class="asset-upload__area asset-upload__area--{{mode}} "
+             [class.asset-upload__area--disabled]="isDisabled"
+             [style.object-fit]="fit"
+             (click)="!isDisabled && input.click()"
+             [src]="d.asset.accessUrl">
+
+
+        <!-- <button (click)="input.click()"
+                class="edit-button">
+            <hero-icon name="pencil"></hero-icon>
+        </button> -->
+
+        <div *ngIf="d.status === AssetUploadStatus.UPLOADING"
+             class="progress-bar progress-bar--{{mode}}">
+            <demo-linear-progress [progress]="d.progress"
+                                 [theme]="d | dataProgressTheme"></demo-linear-progress>
+        </div>
+
+        <button *ngIf="mode === 'square'" class="clear-button" (click)="clear()">
+            <hero-icon name="x"></hero-icon>
+        </button>
+
+        <button *ngIf="mode === 'rounded'" class="clear-button-2" demo-text-neutral-button (click)="clear()">
+            <hero-icon name="x"></hero-icon>
+        </button>
+
+
+    </ng-container>
+
+    <ng-template #emptyState> <button (click)="!isDisabled && input.click()"
+                class="asset-upload__area asset-upload__area--{{mode}}"
+                [class.asset-upload__area--disabled]="isDisabled">
+            <hero-icon [name]="icon"></hero-icon>
+        </button>
+    </ng-template>
+</div>

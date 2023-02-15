@@ -1,0 +1,45 @@
+<demo-page-wrapper [loading]="(loading$ | async) || false" [pageTitle]="pageTitle">
+
+    <demo-sidebar>
+
+        <img src="assets/logo.svg"
+             demo-sidebar-logo>
+        <a [routerLink]="['/']"
+           [routerLinkActive]="['is-active']"
+           [routerLinkActiveOptions]="{ exact: true }">
+            <hero-icon name="view-list"></hero-icon>
+            <span i18n>Lists</span>
+        </a>
+        <ng-container demo-sidebar-footer>
+            <!-- <a [routerLink]="['/', 'settings']"
+               [routerLinkActive]="['is-active']">
+                <hero-icon name="cog"></hero-icon>
+                <span i18n>Settings</span>
+            </a> -->
+            <a (click)="authAppFacade.logout()"
+               href="#">
+                <hero-icon name="logout"></hero-icon>
+                <span i18n>Logout</span>
+            </a>
+        </ng-container>
+
+        <!-- <div demo-sidebar-footer>TESTE 002</div> -->
+    </demo-sidebar>
+
+    <ng-content ngProjectAs="h1[demo-page-wrapper-title]"
+                select="h1[demo-page-wrapper-title]"></ng-content>
+
+    <ng-content ngProjectAs="[demo-page-wrapper-title-actions]"
+                select="[demo-page-wrapper-title-actions]"></ng-content>
+
+    <ng-content ngProjectAs="p[demo-page-wrapper-subtitle]"
+                select="p[demo-page-wrapper-subtitle]"></ng-content>
+
+    <demo-topbar>
+        <img src="assets/logo.svg"
+             demo-topbar-logo>
+    </demo-topbar>
+
+    <ng-content></ng-content>
+
+</demo-page-wrapper>

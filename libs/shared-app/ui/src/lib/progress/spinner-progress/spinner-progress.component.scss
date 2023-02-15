@@ -1,0 +1,71 @@
+:host {
+  display: inline-block;
+  // height: 100%;
+}
+
+.spinner-progress {
+  display: inherit;
+  height: inherit;
+  width: inherit;
+
+  svg {
+    width: inherit;
+    height: inherit;
+
+    color: white;
+
+    animation: rotating 1s linear infinite;
+  }
+
+  &--primary {
+    svg {
+      color: var(--demo-color-primary-500);
+    }
+  }
+
+  &--danger {
+    svg {
+      color: var(--demo-color-danger-500);
+    }
+  }
+
+  &--reverse-primary {
+    svg {
+      color: var(--demo-color-primary-100);
+    }
+  }
+
+  &--accent {
+    svg {
+      color: var(--demo-color-accent-500);
+    }
+  }
+
+  &--reverse-accent {
+    svg {
+      color: var(--demo-color-accent-100);
+    }
+  }
+
+  &--neutral {
+    svg {
+      color: var(--demo-color-neutral-500);
+    }
+  }
+
+  &--reverse-neutral {
+    svg {
+      color: var(--demo-color-neutral-100);
+    }
+  }
+}
+
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

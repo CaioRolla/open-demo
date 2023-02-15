@@ -1,0 +1,128 @@
+:host {
+  display: block;
+}
+
+.radio-card-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+  // max-height: 280px;
+  width: 100%;
+
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--demo-color-neutral-300);
+  background: var(--demo-color-neutral-0);
+  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  transition-property: border, box-shadow;
+  text-align: left;
+
+  &--disabled {
+    opacity: .5;
+    pointer-events: none;
+    cursor: unset;
+  }
+
+  &__input {
+    position: absolute;
+    visibility: hidden;
+  }
+
+  &__marker {
+    opacity: 0;
+    transition: all 0.1s ease-in-out;
+    transition-property: opacity;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 999;
+  }
+
+  &--checked,
+  &:focus {
+    outline: none;
+    border-color: var(--demo-color-primary-500);
+    box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px,
+      var(--demo-color-primary-500) 0px 0px 0px 1px,
+      rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+  }
+
+  &--checked {
+    .radio-card-item__marker {
+      opacity: 1;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    flex: 1;
+    padding: 16px;
+    display: none;
+
+    &:not(:empty) {
+      display: flex;
+    }
+
+    img {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    padding-top: 4px;
+
+    &__title {
+      display: none;
+      padding-right: 12px;
+      &:not(:empty) {
+        display: flex;
+      }
+
+      ::ng-deep * {
+        margin: 0;
+        padding: 0;
+        font-size: var(--demo-fs-300);
+        color: var(--demo-color-neutral-600);
+        font-weight: 500;
+      }
+    }
+
+    &__subtitle {
+      display: none;
+      margin-top: 8px;
+
+      &:not(:empty) {
+        display: flex;
+      }
+
+      ::ng-deep * {
+        margin: 0;
+        padding: 0;
+        font-size: var(--demo-fs-200);
+        color: var(--demo-color-neutral-500);
+        font-weight: 400;
+      }
+    }
+  }
+
+  // &__bottom-label {
+  //   display: none;
+  //   color: var(--demo-color-neutral-700);
+  //   font-weight: 500;
+  //   font-size: 14px;
+  //   padding: 8px;
+
+  //   &:not(:empty) {
+  //     display: flex;
+  //   }
+  // }
+}

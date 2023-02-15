@@ -1,0 +1,163 @@
+<div class="manage-users">
+
+    <div class="manage-users__container">
+
+        <div class="user-table">
+
+            <demo-stacked-list>
+                <demo-stacked-list-header>
+
+                    <div class="user-table-row">
+                        <div class="user-table-row__column user-table-row__column--email"
+                             i18n>
+                            Email
+                        </div>
+                        <div class="user-table-row__column"
+                             i18n>
+                            Status
+                        </div>
+
+                        <div class="user-table-row__column"
+                             i18n>
+                            Permissions
+                        </div>
+
+                        <ng-container *ngIf="(teamsFeatureEnabled$ | async) || false">
+                            <div *hasPermission="UserBasicPermission.TEAM_PATCH_USER"
+                                 class="user-table-row__column user-table-row__column--actions"
+                                 i18n>
+
+                            </div>
+                        </ng-container>
+                    </div>
+
+                </demo-stacked-list-header>
+
+                <ng-container ngProjectAs="demo-stacked-list-row"
+                              *ngIf="(loadingUsers$ | async) || false">
+                    <demo-stacked-list-row *ngFor="let __ of [0, 1, 2, 3, 4, 5]">
+
+                        <div class="user-table-row">
+                            <div class="user-table-row__column user-table-row__column--email">
+                                <div demoLoadingPlaceholder
+                                     style="height: 12px; width: 60%;"></div>
+                            </div>
+                            <div class="user-table-row__column">
+                                <div demoLoadingPlaceholder
+                                     style="height: 12px; width: 20%;"></div>
+                            </div>
+                            <div class="user-table-row__column">
+                                <div demoLoadingPlaceholder
+                                     style="height: 12px; width: 20%;"></div>
+                            </div>
+                            <ng-container *ngIf="(teamsFeatureEnabled$ | async) || false">
+                                <div *hasPermission="UserBasicPermission.TEAM_PATCH_USER"
+                                     class="user-table-row__column user-table-row__column--actions">
+                                    <div demoLoadingPlaceholder
+                                         style="height: 12px; width: 22px"></div>
+                                </div>
+                            </ng-container>
+                        </div>
+                    </demo-stacked-list-row>
+                </ng-container>
+
+                <demo-stacked-list-row *ngIf="(displayEmptyMessage$ | async) || false">
+                    <div class="user-table-row">
+                        <div class="user-table-row__empty"
+                             i18n>
+                            You haven't sent any users yet.
+                        </div>
+                    </div>
+                </demo-stacked-list-row>
+
+                <ng-container ngProjectAs="demo-stacked-list-row"
+                              *ngIf="!(loadingUsers$ | async) || false">
+                    <demo-stacked-list-row *ngFor="let user of (usersResData$ | async)">
+                        <demo-loading-content [showLabel]="false"
+                                             [loading]="(patchingUserId$ | async) === user.id">
+                            <div class="user-table-row">
+                                <div class="user-table-row__column user-table-row__column--email">{{ user.email }}
+
+                                    <span style="margin-left: 6px;"
+                                          *ngIf="user.accountOwner"
+                                          demoChip
+                                          i18n>Owner</span>
+                                </div>
+                                <div class="user-table-row__column">
+                                    <ng-container [ngSwitch]="user.status">
+                                        <ng-container *ngSwitchCase="UserStatus.ACTIVE">Active</ng-container>
+                                        <ng-container *ngSwitchCase="UserStatus.DISABLED">Disabled</ng-container>
+                                        <ng-container *ngSwitchCase="UserStatus.PENDING_CONFIRMATION">Pending Confirmation</ng-container>
+                                    </ng-container>
+                                </div>
+                                <div class="user-table-row__column">
+
+                                    <ng-container *hasPermission="UserBasicPermission.TEAM_PATCH_USER">
+                                        <ng-container *ngIf="((teamsFeatureEnabled$ | async) || false) && !user.accountOwner">
+                                            <div *ngIf="user.status !== UserStatus.ACTIVE">
+                                                {{ user.permissions.length }}
+                                            </div>
+
+                                            <a (click)="patchPermissionDialog(user)"
+                                               *ngIf="user.status === UserStatus.ACTIVE"
+                                               href="javascript:">
+                                                {{ user.permissions.length }}
+                                            </a>
+                                        </ng-container>
+
+                                        <ng-container *ngIf="(!((teamsFeatureEnabled$ | async) || false)) || user.accountOwner">
+                                            <div>
+                                                {{ user.permissions.length }}
+                                            </div>
+
+                                        </ng-container>
+                                    </ng-container>
+
+
+                                    <div *notHasPermission="UserBasicPermission.TEAM_PATCH_USER">
+                                        {{ user.permissions.length }}
+                                    </div>
+
+
+                                </div>
+
+                                <ng-container *ngIf="(teamsFeatureEnabled$ | async) || false">
+                                    <div *hasPermission="UserBasicPermission.TEAM_PATCH_USER"
+                                         class="user-table-row__column  user-table-row__column--actions">
+
+                                        <button *ngIf="(teamsFeatureEnabled$ | async) || false"
+                                                demo-text-neutral-button
+                                                (click)="toggleUserStatus(user.id, user.status)"
+                                                [disabled]="user.accountOwner">
+                                            <hero-icon demoTooltip="Disable account"
+                                                       i18n-demoTooltip
+                                                       name="x"
+                                                       *ngIf="user.status === UserStatus.ACTIVE"></hero-icon>
+                                            <hero-icon demoTooltip="Enable account"
+                                                       i18n-demoTooltip
+                                                       name="check"
+                                                       *ngIf="user.status === UserStatus.DISABLED"></hero-icon>
+                                        </button>
+                                    </div>
+                                </ng-container>
+
+                            </div>
+                        </demo-loading-content>
+                    </demo-stacked-list-row>
+                </ng-container>
+
+                <demo-paginator [totalCount]="(paginatedUsersCount$ | async) || 0"
+                               [showingCount]="(usersResDataCount$ | async) || 0"
+                               [disableNext]="(disableNextUsers$ | async) || false"
+                               [disablePrevious]="(disablePreviousUsers$ | async) || false"
+                               [loading]="(loadingUsersSilently$ | async) || false"
+                               (nextClicked)="nextUsers()"
+                               (previousClicked)="previousUsers()"></demo-paginator>
+            </demo-stacked-list>
+
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,10 @@
+<demo-confirmation-dialog [titleText]="titleText"
+                         [confirmText]="confirmText"
+                         [confirmButtonText]="confirmButtonText"
+                         [confirmationButtonTheme]="confirmationButtonTheme"
+                         [loading]="(loading$ | async) || false"
+                         (confirmed)="onConfirm($event)">
+
+
+
+</demo-confirmation-dialog>

@@ -1,0 +1,250 @@
+<div class="manage-team">
+
+    <div class="manage-team__container">
+        <ng-container *ngIf="(teamsFeatureEnabled$ | async) || false">
+            <demo-card *hasPermission="UserBasicPermission.TEAM_CREATE_INVITE">
+
+                <demo-card-simple-header>
+                    <ng-container i18n>Invite</ng-container>
+                </demo-card-simple-header>
+
+                <form [formGroup]="form"
+                      class="create-form">
+
+                    <div class="create-form__email">
+                        <demo-form-field>
+                            <label for="email"
+                                   demo-label
+                                   i18n>
+                                Email
+                            </label>
+                            <input name="email"
+                                   formControlName="email"
+                                   type="email"
+                                   demo-input>
+
+                            <demo-error *ngIf="emailControl.hasError('required')">
+                                <ng-container i18n>The email field is required.</ng-container>
+                            </demo-error>
+
+                            <demo-error *ngIf="emailControl.hasError('email')">
+                                <ng-container i18n>Invalid email format.</ng-container>
+                            </demo-error>
+
+                            <demo-error *ngIf="emailControl.hasError('message:A invite was already sent to this email')">
+                                <ng-container i18n>A invite was already sent to this email.</ng-container>
+                            </demo-error>
+
+                            <demo-error *ngIf="emailControl.hasError('message:This user is already on you account')">
+                                <ng-container i18n>This user is already on you account.</ng-container>
+                            </demo-error>
+
+                            <demo-error *ngIf="emailControl.hasError('message:This user already has an account')">
+                                <ng-container i18n>This user already has an account.</ng-container>
+                            </demo-error>
+
+                            <demo-error *ngIf="emailControl.hasError('message:You cant invite yourself')">
+                                <ng-container i18n>You cant invite yourself.</ng-container>
+                            </demo-error>
+
+
+
+                            <demo-hint>
+                                <ng-container i18n>Your colleague will need to sign up with this email</ng-container>
+                            </demo-hint>
+
+                        </demo-form-field>
+                    </div>
+
+                    <div class="create-form__permissions">
+
+                        <a href="javascript:"
+                           (click)="addPermissionDialog()" i18n>
+                            {{ ((permissionsControl.valueChanges | async) || []).length }} permissions selected
+                        </a>
+
+                    </div>
+
+
+                    <div class="create-form__spacer"></div>
+
+
+
+
+                    <button demo-primary-button
+                            class="create-form__submit"
+                            type="button"
+                            [loading]="(creatingInvite$ | async) || false"
+                            (click)="onSubmit()"
+                            i18n>Send Invite</button>
+
+
+                </form>
+
+                <demo-card-actions-footer>
+                    <button demo-primary-button
+                            class="create-form-footer"
+                            type="button"
+                            [loading]="(creatingInvite$ | async) || false"
+                            (click)="onSubmit()"
+                            i18n>Send Invite</button>
+                </demo-card-actions-footer>
+
+            </demo-card>
+
+        </ng-container>
+
+
+        <div class="invite-table">
+
+            <demo-stacked-list>
+                <demo-stacked-list-header>
+
+                    <div class="invite-table-row">
+                        <div class="invite-table-row__column invite-table-row__column--email"
+                             i18n>
+                            Email
+                        </div>
+                        <div class="invite-table-row__column"
+                             i18n>
+                            Status
+                        </div>
+
+                        <div class="invite-table-row__column"
+                             i18n>
+                            Permissions
+                        </div>
+                        <ng-container *ngIf="(teamsFeatureEnabled$ | async) || false">
+                            <div *hasPermission="UserBasicPermission.TEAM_PATCH_INVITE"
+                                 class="invite-table-row__column invite-table-row__column--actions"
+                                 i18n>
+                                
+                            </div>
+                        </ng-container>
+                    </div>
+
+                </demo-stacked-list-header>
+
+                <ng-container ngProjectAs="demo-stacked-list-row"
+                              *ngIf="(loadingInvites$ | async) || false">
+                    <demo-stacked-list-row *ngFor="let __ of [0, 1, 2, 3, 4, 5]">
+
+                        <div class="invite-table-row">
+                            <div class="invite-table-row__column invite-table-row__column--email">
+                                <div demoLoadingPlaceholder
+                                     style="height: 12px; width: 60%;"></div>
+                            </div>
+                            <div class="invite-table-row__column">
+                                <div demoLoadingPlaceholder
+                                     style="height: 12px; width: 20%;"></div>
+                            </div>
+                            <div class="invite-table-row__column">
+                                <div demoLoadingPlaceholder
+                                     style="height: 12px; width: 20%;"></div>
+                            </div>
+                            <ng-container *ngIf="(teamsFeatureEnabled$ | async) || false">
+                                <div *hasPermission="UserBasicPermission.TEAM_PATCH_INVITE"
+                                     class="invite-table-row__column invite-table-row__column--actions">
+                                    <div demoLoadingPlaceholder
+                                         style="height: 12px; width: 22px;"></div>
+                                </div>
+                            </ng-container>
+                        </div>
+                    </demo-stacked-list-row>
+                </ng-container>
+
+                <demo-stacked-list-row *ngIf="(displayEmptyMessage$ | async) || false">
+                    <div class="invite-table-row">
+                        <div class="invite-table-row__empty"
+                             i18n>
+                            You haven't sent any invites yet.
+                        </div>
+                    </div>
+                </demo-stacked-list-row>
+
+                <ng-container ngProjectAs="demo-stacked-list-row"
+                              *ngIf="!(loadingInvites$ | async) || false">
+                    <demo-stacked-list-row *ngFor="let invite of (invitesResData$ | async)">
+                        <demo-loading-content [showLabel]="false"
+                                             [loading]="(resendingInviteId$ | async) === invite.id || (patchingInviteId$ | async) === invite.id">
+                            <div class="invite-table-row">
+                                <div class="invite-table-row__column invite-table-row__column--email">{{ invite.email }}</div>
+                                <div class="invite-table-row__column">
+                                    <ng-container [ngSwitch]="invite.status">
+                                        <ng-container *ngSwitchCase="InviteStatus.PENDING">Pending</ng-container>
+                                        <ng-container *ngSwitchCase="InviteStatus.ACCEPTED">Accepted</ng-container>
+                                        <ng-container *ngSwitchCase="InviteStatus.DENIED">Denied</ng-container>
+                                        <ng-container *ngSwitchCase="InviteStatus.CANCELED">Canceled</ng-container>
+                                    </ng-container>
+                                </div>
+
+                                <div class="invite-table-row__column"
+                                     >
+
+                                    <ng-container *ngIf="(teamsFeatureEnabled$ | async) || false">
+                                        <span *ngIf="invite.status !== InviteStatus.PENDING">
+                                            {{ invite.permissions.length }}
+                                        </span>
+
+                                        <a *ngIf="invite.status === InviteStatus.PENDING"
+                                           (click)="patchPermissionDialog(invite)"
+                                           href="javascript:">
+                                            {{ invite.permissions.length }}
+                                        </a>
+                                    </ng-container>
+
+                                    <ng-container *ngIf="!((teamsFeatureEnabled$ | async) || false)">
+                                        <span>
+                                            {{ invite.permissions.length }}
+                                        </span>
+                                    </ng-container>
+
+                                </div>
+
+
+                                <ng-container *ngIf="(teamsFeatureEnabled$ | async) || false">
+                                    <div *hasPermission="UserBasicPermission.TEAM_PATCH_INVITE"
+                                         class="invite-table-row__column  invite-table-row__column--actions">
+                                        <button type="button"
+                                                demoTooltip="Cancel Invite"
+                                                demo-text-neutral-button
+                                                (click)="cancelInvite(invite.id)"
+                                                [disabled]="invite.status !== InviteStatus.PENDING">
+                                            <hero-icon name="x"></hero-icon>
+                                        </button>
+
+
+                                        <button type="button"
+                                                demo-text-neutral-button
+                                                demoTooltip="Resend Invite"
+                                                i18n-demoTooltip
+                                                (click)="resendInvite(invite.id)"
+                                                [disabled]="invite.status === InviteStatus.ACCEPTED">
+                                            <hero-icon name="refresh"></hero-icon>
+                                        </button>
+                                    </div>
+                                </ng-container>
+
+
+
+
+                            </div>
+                        </demo-loading-content>
+                    </demo-stacked-list-row>
+                </ng-container>
+
+                <demo-paginator [totalCount]="(paginatedInvitesCount$ | async) || 0"
+                               [showingCount]="(invitesResDataCount$ | async) || 0"
+                               [disableNext]="(disableNextInvites$ | async) || false"
+                               [disablePrevious]="(disablePreviousInvites$ | async) || false"
+                               [loading]="(loadingInvitesSilently$ | async) || false"
+                               (nextClicked)="nextInvites()"
+                               (previousClicked)="previousInvites()"></demo-paginator>
+            </demo-stacked-list>
+
+
+        </div>
+
+    </div>
+
+</div>

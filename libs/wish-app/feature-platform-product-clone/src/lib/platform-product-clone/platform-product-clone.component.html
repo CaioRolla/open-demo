@@ -1,0 +1,164 @@
+<demo-card [noPadding]="true">
+
+    <div class="platform-product-clone">
+
+        <div class="product-table-search-row">
+
+            <div class="product-table-search-row__count"
+                 i18n>
+                {{ filteredProductsCount$ | async }} products
+            </div>
+
+            <div class="product-table-search-row__search">
+                <demo-form-field>
+                    <!-- <label for="productSearch"
+                                       demo-label
+                                       i18n>
+                                    Search
+                                </label> -->
+                    <input name="productSearch"
+                           [formControl]="searchControl"
+                           type="text"
+                           placeholder="Search..."
+                           i18n-placeholder
+                           demo-input>
+
+
+                    <button *ngIf="!searchControl.value"
+                            demo-button
+                            demo-input-suffix
+                            disabled>
+                        <hero-icon name="search"></hero-icon>
+                    </button>
+
+                    <button *ngIf="searchControl.value"
+                            demo-button
+                            demo-input-suffix
+                            (click)="searchControl.patchValue(null)">
+                        <hero-icon name="x"></hero-icon>
+                    </button>
+                    <demo-hint>
+                        <ng-container i18n>Search for products to add in your list.</ng-container>
+                    </demo-hint>
+                </demo-form-field>
+            </div>
+
+        </div>
+
+        <div class="platform-product-clone__content">
+
+            <demo-stacked-list>
+                <ng-container ngProjectAs="demo-stacked-list-row"
+                              *ngIf="(loadingProducts$ | async) || false">
+                    <demo-stacked-list-row *ngFor="let __ of [0, 1, 2, 3, 4, 5]">
+
+                        <div class="product-table-row">
+
+                            <div class="product-table-row__checkbox">
+                                <div demoLoadingPlaceholder
+                                     style="height: 13px; width: 13px;"></div>
+                            </div>
+
+                            <div class="product-table-row__image"
+                                 demoLoadingPlaceholder>
+                            </div>
+
+                            <div class="product-table-row__info">
+                                <div demoLoadingPlaceholder
+                                     style="height: 12px; width: 10%;"></div>
+                                <div demoLoadingPlaceholder
+                                     style="height: 12px; width: 20%; margin-top: 8px;"></div>
+                            </div>
+
+                            <div class="product-table-row__price">
+                                <div demoLoadingPlaceholder
+                                     style="height: 12px; width: 32px;"></div>
+                            </div>
+
+                        </div>
+
+                    </demo-stacked-list-row>
+                </ng-container>
+
+                <ng-container ngProjectAs="demo-stacked-list-row"
+                              *ngIf="!(loadingProducts$ | async)">
+
+                    <demo-stacked-list-row style="cursor: pointer;"
+                                          (click)="$any(checkbox.click()) ||$event.stopPropagation()"
+                                          *ngFor="let product of options$ | async; trackBy:trackByProductId">
+
+                        <div class="product-table-row">
+
+                            <div class="product-table-row__checkbox">
+                                <demo-checkbox-field>
+                                    <input #checkbox
+                                           type="checkbox"
+                                           [checked]="product.checked"
+                                           (click)="$any(productSelectToggle(product.id, !product.checked)) || $event.stopPropagation()">
+                                </demo-checkbox-field>
+                            </div>
+
+                            <div class="product-table-row__image"
+                                 demoLoadingPlaceholder>
+                                <img *ngIf="product.previewUrl"
+                                     [src]="product.previewUrl"
+                                     loading="lazy"
+                                     class="animation"
+                                     onload="this.classList.remove('animation')">
+                            </div>
+
+
+
+                            <div class="product-table-row__info">
+                                <h2>{{ product.name | truncate:[26] }}</h2>
+                                <p>{{ product.desc | truncate:[38] }}</p>
+                                <div *ngIf="product.estimatedPrice"
+                                     class="price">{{ product.estimatedPrice | currency: 'BRL' }}</div>
+                            </div>
+
+
+                            <div *ngIf="product.estimatedPrice"
+                                 class="product-table-row__price price">{{ product.estimatedPrice | currency: 'BRL' }}</div>
+
+
+                        </div>
+
+                    </demo-stacked-list-row>
+
+                </ng-container>
+
+                <demo-stacked-list-row *ngIf="displayEmptyMessage$ | async">
+
+                    <div *ngIf="!(productsSearchQuery$ | async)"
+                         class="product-table-empty"
+                         i18n>No recommendations found.</div>
+
+                    <div *ngIf="!!(productsSearchQuery$ | async)"
+                         class="product-table-empty"
+                         i18n>Search does not match any product.</div>
+
+                </demo-stacked-list-row>
+            </demo-stacked-list>
+        </div>
+    </div>
+    <demo-card-actions-footer>
+
+        <button demo-text-neutral-button
+                i18n
+                [disabled]="((cloningProducts$ | async) || false)"
+                (click)="onCancel()">
+            Cancel
+        </button>
+
+        <button type="button"
+                demo-primary-button
+                (click)="onSubmit()"
+                [disabled]="((loadingProducts$ | async) || false) || selectControl.value.length === 0"
+                [loading]="(cloningProducts$ | async) || false"
+                i18n>
+            Add <ng-container *ngIf="selectControl.value.length">{{selectControl.value.length}}</ng-container>
+        </button>
+
+    </demo-card-actions-footer>
+
+</demo-card>

@@ -1,0 +1,1267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template" target-language="pt">
+    <body>
+      <trans-unit id="58528211526067176" datatype="html">
+        <source> Drag and drop or <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;javascript:&quot;
+               (click)=&quot;$event.stopPropagation(); input.click()&quot;>"/> browse <x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> your files. </source>
+        <target state="translated">Arraste e solte ou <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/>selecione<x id="CLOSE_LINK" ctype="x-a"/> entre seus arquivos.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+asset/app/src/lib/asset-upload/asset-upload.component.html</context>
+          <context context-type="linenumber">21,27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5410502947509664451" datatype="html">
+        <source>Working late</source>
+        <target state="translated">Trabalhando tarde</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/+state/auth-app.selectors.ts</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8772850684697870535" datatype="html">
+        <source>Good evening</source>
+        <target state="translated">Boa noite</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/+state/auth-app.selectors.ts</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7931339902227306467" datatype="html">
+        <source>Good afternon</source>
+        <target state="translated">Boa tarde</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/+state/auth-app.selectors.ts</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8829540234129394429" datatype="html">
+        <source>Good morning</source>
+        <target state="translated">Bom Dia</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/+state/auth-app.selectors.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5573521891741907372" datatype="html">
+        <source>Hi</source>
+        <target state="translated">Oi</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/+state/auth-app.selectors.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="658091515920880453" datatype="html">
+        <source>Failed to resend the confirmation. Contact the system administrator.</source>
+        <target state="translated">Falha ao reenviar a confirmação. Entre em contato com o administrador do sistema.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/confirm-email/+state/confirm-email.effects.ts</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/forgot-password-email/+state/forgot-password-email.effects.ts</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/forgot-password/+state/forgot-password.effects.ts</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7018730574348197573" datatype="html">
+        <source>A new confirmation email was sent to you.</source>
+        <target state="translated">Um novo e-mail de confirmação foi enviado para você.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/confirm-email/+state/confirm-email.effects.ts</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/forgot-password-email/+state/forgot-password-email.effects.ts</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6824547668594116787" datatype="html">
+        <source>Forgot Password 👍</source>
+        <target state="translated">Esqueci a senha 👍</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/forgot-password/forgot-password.component.html</context>
+          <context context-type="linenumber">1,2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1245491709406638979" datatype="html">
+        <source>Enter your account email.</source>
+        <target state="translated">Digite o e-mail da sua conta.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/forgot-password/forgot-password.component.html</context>
+          <context context-type="linenumber">2,3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7817163188308824825" datatype="html">
+        <source> Email </source>
+        <target state="translated">E-mail</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/forgot-password/forgot-password.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/login/login.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/register/register.component.html</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-public-list/src/lib/dialogs/new-person-dialog/new-person-dialog.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3299907176920686138" datatype="html">
+        <source>The email field is required.</source>
+        <target state="translated">O campo de e-mail é obrigatório.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/forgot-password/forgot-password.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/login/login.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/register/register.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-public-list/src/lib/dialogs/new-person-dialog/new-person-dialog.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3174495843910953299" datatype="html">
+        <source>Invalid email format.</source>
+        <target state="translated">Formato de email inválido.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/forgot-password/forgot-password.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/login/login.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/register/register.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-public-list/src/lib/dialogs/new-person-dialog/new-person-dialog.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8234379507942412908" datatype="html">
+        <source>Send Confirmation</source>
+        <target state="translated">Enviar confirmação</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/forgot-password/forgot-password.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5946699573462691626" datatype="html">
+        <source>Incorrect email and/or password.</source>
+        <target state="translated">E-mail e/ou senha incorretos.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/login/+state/login.effects.ts</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/login/login.component.html</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/login/login.component.html</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2862755131653460265" datatype="html">
+        <source>Login ✌️</source>
+        <target state="translated">Entrar ✌️</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/login/login.component.html</context>
+          <context context-type="linenumber">1,2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2722153137665792986" datatype="html">
+        <source>Please log in to access your account.</source>
+        <target state="translated">Faça login para acessar sua conta.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/login/login.component.html</context>
+          <context context-type="linenumber">2,3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1557080315836233628" datatype="html">
+        <source> Password </source>
+        <target state="translated">Senha</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/login/login.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/register/register.component.html</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/reset-password/reset-password.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8817983178657826547" datatype="html">
+        <source>The password field is required.</source>
+        <target state="translated">O campo de senha é necessária.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/login/login.component.html</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/register/register.component.html</context>
+          <context context-type="linenumber">79</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/reset-password/reset-password.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2454050363478003966" datatype="html">
+        <source>Login</source>
+        <target state="translated">Entrar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/login/login.component.html</context>
+          <context context-type="linenumber">76,78</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="695845816150646546" datatype="html">
+        <source> Don't have an account? <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;['/', 'auth', 'sign-up']&quot;>"/>Sign up Today<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/></source>
+        <target state="translated">Não tem uma conta? <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/>Inscreva-se<x id="CLOSE_LINK" ctype="x-a"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/login/login.component.html</context>
+          <context context-type="linenumber">80,81</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8264044238565501678" datatype="html">
+        <source>Forgot password</source>
+        <target state="translated">Esqueci a senha</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/login/login.component.html</context>
+          <context context-type="linenumber">85,86</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8179635314987707955" datatype="html">
+        <source>You already have an account. Try logging in.</source>
+        <target state="translated">Você já tem uma conta. Tente fazer login.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/register/+state/register.effects.ts</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2507442318364856333" datatype="html">
+        <source>Sign Up 🎉</source>
+        <target state="translated">Inscreva-se 🎉</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/register/register.component.html</context>
+          <context context-type="linenumber">1,2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2540733477659866610" datatype="html">
+        <source>Create an account to start using <x id="INTERPOLATION" equiv-text="{{ config.appName }}"/>.</source>
+        <target state="translated">Crie uma conta para começar a usar <x id="INTERPOLATION"/>.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/register/register.component.html</context>
+          <context context-type="linenumber">2,3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6867381603185205680" datatype="html">
+        <source> Or </source>
+        <target state="translated">Ou</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/register/register.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8778616811237742446" datatype="html">
+        <source> Name </source>
+        <target state="translated">Nome</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/register/register.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-create-list/src/lib/create-list/create-list.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-home/src/lib/home/home.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-manage-list/src/lib/tabs/settings-tab/settings-tab.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-public-list/src/lib/dialogs/new-person-dialog/new-person-dialog.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-save-product/src/lib/save-product/save-product.component.html</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3196084850965031890" datatype="html">
+        <source>The name field is required.</source>
+        <target state="translated">O campo nome é obrigatório.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/register/register.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-public-list/src/lib/dialogs/new-person-dialog/new-person-dialog.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7614917189511766243" datatype="html">
+        <source>The password must have at least 5 characters.</source>
+        <target state="translated">A senha deve ter pelo menos 5 caracteres.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/register/register.component.html</context>
+          <context context-type="linenumber">83</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/reset-password/reset-password.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8611631653261669641" datatype="html">
+        <source> Confirm Password </source>
+        <target state="translated">Confirme a Senha</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/register/register.component.html</context>
+          <context context-type="linenumber">91</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/reset-password/reset-password.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="103330799411073686" datatype="html">
+        <source>The password confirmation is required.</source>
+        <target state="translated">A confirmação da senha é necessária.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/register/register.component.html</context>
+          <context context-type="linenumber">99</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/reset-password/reset-password.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3616369435679929720" datatype="html">
+        <source>Password confirmation does not match.</source>
+        <target state="translated">A confirmação da senha não corresponde.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/register/register.component.html</context>
+          <context context-type="linenumber">103</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/reset-password/reset-password.component.html</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1466012768716286509" datatype="html">
+        <source>Sign Up</source>
+        <target state="translated">Cadastrar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/register/register.component.html</context>
+          <context context-type="linenumber">112</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7084886154964687358" datatype="html">
+        <source> Already have an account? <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;['/', 'auth', 'sign-in']&quot;>"/>Login<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/></source>
+        <target state="translated">Já tem uma conta? <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/>Entrar<x id="CLOSE_LINK" ctype="x-a"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/register/register.component.html</context>
+          <context context-type="linenumber">116</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6817478100704669737" datatype="html">
+        <source>Something went wrong. Check your email for instructions on how to reset your password.</source>
+        <target state="translated">Algo deu errado. Verifique seu e-mail para obter instruções sobre como redefinir sua senha.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/reset-password/+state/reset-password.effects.ts</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6972105223770675605" datatype="html">
+        <source>Reset Password</source>
+        <target state="translated">Redefinir senha</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/+auth/app/src/lib/pages/reset-password/reset-password.component.html</context>
+          <context context-type="linenumber">59,61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1064976092644289387" datatype="html">
+        <source> (optional)
+</source>
+        <target state="translated">(opcional)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/shared-app/forms/src/lib/form-field/label/label.component.html</context>
+          <context context-type="linenumber">6,8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2166840906614680243" datatype="html">
+        <source> Connect with Google </source>
+        <target state="translated">Entrar com o Google</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/shared-app/ui/src/lib/auth-button/google-auth-button/google-auth-button.component.html</context>
+          <context context-type="linenumber">21,23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4299467318965233262" datatype="html">
+        <source> Loading... </source>
+        <target state="translated">Carregando...</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/shared-app/ui/src/lib/loading-content/loading-content.component.html</context>
+          <context context-type="linenumber">16,18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7097638663020913345" datatype="html">
+        <source> Showing <x id="INTERPOLATION" equiv-text="{{ showingCount }}"/> of <x id="INTERPOLATION_1" equiv-text="{{ totalCount }}"/> results </source>
+        <target state="translated">Exibindo <x id="INTERPOLATION"/> de <x id="INTERPOLATION_1"/> resultados</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/shared-app/ui/src/lib/paginator/paginator.component.html</context>
+          <context context-type="linenumber">4,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3894950702316166331" datatype="html">
+        <source>Loading...</source>
+        <target state="translated">Carregando...</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/shared-app/ui/src/lib/paginator/paginator.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6159411057437690212" datatype="html">
+        <source> The best wishlist website! </source>
+        <target state="translated">O melhor site de lista de desejos!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-auth-merch/src/lib/auth-merch/auth-merch.component.html</context>
+          <context context-type="linenumber">4,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9157887816014065915" datatype="html">
+        <source> Create awesome wishlists and share with your family and friends! 🎉 </source>
+        <target state="translated">Crie listas de desejos incríveis e compartilhe com sua família e amigos! 🎉</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-auth-merch/src/lib/auth-merch/auth-merch.component.html</context>
+          <context context-type="linenumber">8,10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4194597130251276907" datatype="html">
+        <source>Failed to create list.</source>
+        <target state="translated">Falha ao criar lista.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-create-list/src/lib/+state/create-list.effects.ts</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6624617695951243415" datatype="html">
+        <source>Create List</source>
+        <target state="translated">Criar lista</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-create-list/src/lib/create-list/create-list.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-home/src/lib/home/home.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-home/src/lib/home/home.component.html</context>
+          <context context-type="linenumber">216</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3951955330805769047" datatype="html">
+        <source>Your list must have a name</source>
+        <target state="translated">Sua lista deve ter um nome</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-create-list/src/lib/create-list/create-list.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3563823504206575540" datatype="html">
+        <source> Description </source>
+        <target state="translated">Descrição</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-create-list/src/lib/create-list/create-list.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-manage-list/src/lib/tabs/settings-tab/settings-tab.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-save-product/src/lib/save-product/save-product.component.html</context>
+          <context context-type="linenumber">93</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2330577642930707695" datatype="html">
+        <source> Cancel </source>
+        <target state="translated">Cancelar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-create-list/src/lib/create-list/create-list.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-delete-list/src/lib/delete-list/delete-list.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-delete-product/src/lib/delete-product/delete-product.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-platform-product-clone/src/lib/platform-product-clone/platform-product-clone.component.html</context>
+          <context context-type="linenumber">144</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-save-product/src/lib/save-product/save-product.component.html</context>
+          <context context-type="linenumber">162</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3971100408152984961" datatype="html">
+        <source> Next </source>
+        <target state="translated">Próximo</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-create-list/src/lib/create-list/create-list.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1265447106427116601" datatype="html">
+        <source>List deleted successfully!</source>
+        <target state="translated">Lista excluída com sucesso!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-delete-list/src/lib/+state/delete-list.effects.ts</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6510959572336578205" datatype="html">
+        <source>Delete List</source>
+        <target state="translated">Excluir lista</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-delete-list/src/lib/delete-list/delete-list.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-home/src/lib/home/home.component.html</context>
+          <context context-type="linenumber">172</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="651790065284402153" datatype="html">
+        <source>You are about to permanently delete <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/><x id="INTERPOLATION" equiv-text="&lt;"/><x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text=".&lt;/p>"/>.</source>
+        <target state="translated">Você está prestes a excluir <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/><x id="INTERPOLATION"/><x id="CLOSE_TAG_STRONG" ctype="x-strong"/> permanentemente.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-delete-list/src/lib/delete-list/delete-list.component.html</context>
+          <context context-type="linenumber">8,10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-delete-product/src/lib/delete-product/delete-product.component.html</context>
+          <context context-type="linenumber">8,10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1877522221356492058" datatype="html">
+        <source>Are you sure you want to continue?</source>
+        <target state="translated">Você tem certeza que quer continuar?</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-delete-list/src/lib/delete-list/delete-list.component.html</context>
+          <context context-type="linenumber">10,13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-delete-product/src/lib/delete-product/delete-product.component.html</context>
+          <context context-type="linenumber">10,12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6660925946511264619" datatype="html">
+        <source> Delete </source>
+        <target state="translated">Excluir</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-delete-list/src/lib/delete-list/delete-list.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-delete-product/src/lib/delete-product/delete-product.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2715415080770036626" datatype="html">
+        <source>Product deleted successfully!</source>
+        <target state="translated">Produto excluído com sucesso!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-delete-product/src/lib/+state/delete-product.effects.ts</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1692773917047930497" datatype="html">
+        <source>Delete Product</source>
+        <target state="translated">Excluir produto</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-delete-product/src/lib/delete-product/delete-product.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6570363013146073520" datatype="html">
+        <source>Dashboard</source>
+        <target state="translated">Painel</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-home/src/lib/home/home.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8760608645826345382" datatype="html">
+        <source> Lists </source>
+        <target state="translated">Listas</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-home/src/lib/home/home.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4282587102956396340" datatype="html">
+        <source> Status </source>
+        <target state="translated">Status</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-home/src/lib/home/home.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4410576150602553278" datatype="html">
+        <source> Creation </source>
+        <target state="translated">Criação</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-home/src/lib/home/home.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6169652011255001388" datatype="html">
+        <source> You haven't sent any lists yet. </source>
+        <target state="translated">Você ainda não enviou nenhuma lista.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-home/src/lib/home/home.component.html</context>
+          <context context-type="linenumber">100</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8204176479746810612" datatype="html">
+        <source>Active</source>
+        <target state="translated">Ativo</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-home/src/lib/home/home.component.html</context>
+          <context context-type="linenumber">127</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2544384825425341779" datatype="html">
+        <source>Stopped</source>
+        <target state="translated">Parou</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-home/src/lib/home/home.component.html</context>
+          <context context-type="linenumber">131</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7690300301877282276" datatype="html">
+        <source> You don't have any lists yet </source>
+        <target state="translated">Você ainda não tem listas</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-home/src/lib/home/home.component.html</context>
+          <context context-type="linenumber">203</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4413439277476768842" datatype="html">
+        <source> Create a list and start receiving gifts from your friends! </source>
+        <target state="translated">Crie uma lista e comece a receber presentes de seus amigos!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-home/src/lib/home/home.component.html</context>
+          <context context-type="linenumber">207</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3538890808668808087" datatype="html">
+        <source>List updated successfully!</source>
+        <target state="translated">Lista atualizada com sucesso!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-manage-list/src/lib/+state/manage-list.effects.ts</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7042449837874826952" datatype="html">
+        <source>Failed to update list.</source>
+        <target state="translated">Falha ao atualizar a lista.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-manage-list/src/lib/+state/manage-list.effects.ts</context>
+          <context context-type="linenumber">92</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2184619916211262318" datatype="html">
+        <source>Copy URL</source>
+        <target state="translated">Copiar URL</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-manage-list/src/lib/manage-list/manage-list.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7419704019640008953" datatype="html">
+        <source>Share</source>
+        <target state="translated">Compartilhar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-manage-list/src/lib/manage-list/manage-list.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/ui/src/lib/list-theme-processor/list-theme-processor.component.html</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8200029721669970401" datatype="html">
+        <source>Visit List</source>
+        <target state="translated">Visitar lista</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-home/src/lib/home/home.component.html</context>
+          <context context-type="linenumber">164</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-manage-list/src/lib/manage-list/manage-list.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6745599553799703157" datatype="html">
+        <source>Manage List</source>
+        <target state="translated">Gerenciar lista</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-home/src/lib/home/home.component.html</context>
+          <context context-type="linenumber">155</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6707361102856436710" datatype="html">
+        <source>Products</source>
+        <target state="translated">Produtos</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-manage-list/src/lib/manage-list/manage-list.component.html</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1785069579645456984" datatype="html">
+        <source>Appearence</source>
+        <target state="translated">Aparência</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-manage-list/src/lib/manage-list/manage-list.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4930506384627295710" datatype="html">
+        <source>Settings</source>
+        <target state="translated">Configurações</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-manage-list/src/lib/manage-list/manage-list.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7783224332687048533" datatype="html">
+        <source>List URL copied to Clipboard!</source>
+        <target state="translated">URL da lista copiado para a área de transferência!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-manage-list/src/lib/manage-list/manage-list.component.ts</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8699671033686348545" datatype="html">
+        <source> Banner </source>
+        <target state="translated">Banner</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-manage-list/src/lib/tabs/appearance-tab/appearance-tab.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5799438277111148696" datatype="html">
+        <source> Profile </source>
+        <target state="translated">Perfil</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-manage-list/src/lib/tabs/appearance-tab/appearance-tab.component.html</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4174938775597798888" datatype="html">
+        <source>Your Products </source>
+        <target state="translated">Seus produtos</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-manage-list/src/lib/tabs/products-tab/products-tab.component.html</context>
+          <context context-type="linenumber">10,11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4589839558448265597" datatype="html">
+        <source> Recommended </source>
+        <target state="translated">Recomendados</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-manage-list/src/lib/tabs/products-tab/products-tab.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3620188369327429839" datatype="html">
+        <source> Save </source>
+        <target state="translated">Salvar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-manage-list/src/lib/tabs/settings-tab/settings-tab.component.html</context>
+          <context context-type="linenumber">138</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-save-product/src/lib/save-product/save-product.component.html</context>
+          <context context-type="linenumber">171</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3486420138898799155" datatype="html">
+        <source>Products added to list!</source>
+        <target state="translated">Produtos adicionados à lista!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-platform-product-clone/src/lib/+state/platform-product-clone.effects.ts</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="310574530031621724" datatype="html">
+        <source>Search for products to add in your list.</source>
+        <target state="translated">Pesquise produtos para adicionar à sua lista.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-platform-product-clone/src/lib/platform-product-clone/platform-product-clone.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6613141126825415842" datatype="html">
+        <source>No recommendations found.</source>
+        <target state="translated">Nenhuma recomendação encontrada.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-platform-product-clone/src/lib/platform-product-clone/platform-product-clone.component.html</context>
+          <context context-type="linenumber">128</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1928943936150257230" datatype="html">
+        <source> Add <x id="START_TAG_NG_CONTAINER" ctype="x-ng_container" equiv-text="&lt;ng-container *ngIf=&quot;selectControl.value.length&quot;>"/><x id="INTERPOLATION" equiv-text="h}}"/><x id="CLOSE_TAG_NG_CONTAINER" ctype="x-ng_container"/></source>
+        <target state="translated"> Adicionar <x id="START_TAG_NG_CONTAINER" ctype="x-ng_container" equiv-text="&lt;ng-container *ngIf=&quot;selectControl.value.length&quot;>"/><x id="INTERPOLATION" equiv-text="h}}"/><x id="CLOSE_TAG_NG_CONTAINER" ctype="x-ng_container"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-platform-product-clone/src/lib/platform-product-clone/platform-product-clone.component.html</context>
+          <context context-type="linenumber">153</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7616770651914901276" datatype="html">
+        <source>Product</source>
+        <target state="translated">Produto</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-manage-list/src/lib/tabs/products-tab/products-tab.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1008164291784220020" datatype="html">
+        <source> <x id="INTERPOLATION" equiv-text="{{ filteredProductsCount$ | async }}"/> products </source>
+        <target state="translated"><x id="INTERPOLATION"/> produtos</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-manage-list/src/lib/tabs/products-tab/products-tab.component.html</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-platform-product-clone/src/lib/platform-product-clone/platform-product-clone.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8854094932942190741" datatype="html">
+        <source>Search...</source>
+        <target state="translated">Pesquisar...</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-manage-list/src/lib/tabs/products-tab/products-tab.component.html</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-platform-product-clone/src/lib/platform-product-clone/platform-product-clone.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1816443994645653222" datatype="html">
+        <source>Search for products currently in your list.</source>
+        <target state="translated">Pesquise produtos atualmente em sua lista.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-manage-list/src/lib/tabs/products-tab/products-tab.component.html</context>
+          <context context-type="linenumber">97</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5954430895394361048" datatype="html">
+        <source>Edit product</source>
+        <target state="translated">Editar produto</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-manage-list/src/lib/tabs/products-tab/products-tab.component.html</context>
+          <context context-type="linenumber">162</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4847990333018793798" datatype="html">
+        <source>Delete product</source>
+        <target state="translated">Excluir produto</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-manage-list/src/lib/tabs/products-tab/products-tab.component.html</context>
+          <context context-type="linenumber">169</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3021695906061757529" datatype="html">
+        <source>You don't have any products yet. <x id="START_LINK" ctype="x-a" equiv-text="&lt;a (click)=&quot;createProductClicked()&quot;
+                       href=&quot;javascript:&quot;>"/>Click here<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> to add products manually or check out our <x id="START_LINK_1" equiv-text="&lt;a (click)=&quot;recommendedProductClicked()&quot;
+                       href=&quot;javascript:&quot;>"/>recommended products<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/></source>
+        <target state="translated">Você ainda não tem nenhum produto. <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/>Clique aqui<x id="CLOSE_LINK" ctype="x-a"/> para adicionar produtos manualmente ou confira nossos <x id="START_LINK_1" ctype="x-a" equiv-text="&lt;a>"/>produtos recomendados<x id="CLOSE_LINK" ctype="x-a"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-manage-list/src/lib/tabs/products-tab/products-tab.component.html</context>
+          <context context-type="linenumber">188,192</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4605160554822698217" datatype="html">
+        <source>Search does not match any product.</source>
+        <target state="translated">A pesquisa não corresponde a nenhum produto.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-manage-list/src/lib/tabs/products-tab/products-tab.component.html</context>
+          <context context-type="linenumber">194</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-platform-product-clone/src/lib/platform-product-clone/platform-product-clone.component.html</context>
+          <context context-type="linenumber">132</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4331695391007690918" datatype="html">
+        <source> 💵 Pix </source>
+        <target state="translated">💵 Pix</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-manage-list/src/lib/tabs/settings-tab/settings-tab.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1822112589100516251" datatype="html">
+        <source> Allow your friends to send you a PIX! </source>
+        <target state="translated">Permita que seus amigos lhe enviem um PIX!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-manage-list/src/lib/tabs/settings-tab/settings-tab.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3594870116614569045" datatype="html">
+        <source> Chave PIX </source>
+        <target state="translated">Chave PIX</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-manage-list/src/lib/tabs/settings-tab/settings-tab.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7542933098541558971" datatype="html">
+        <source> 🗓 Event Information </source>
+        <target state="translated">🗓 Informações do evento</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-manage-list/src/lib/tabs/settings-tab/settings-tab.component.html</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3797974366230236765" datatype="html">
+        <source> Let your friends and family know when and where the event is going to happen. </source>
+        <target state="translated">Avise seus amigos e familiares quando e onde o evento vai acontecer.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-manage-list/src/lib/tabs/settings-tab/settings-tab.component.html</context>
+          <context context-type="linenumber">82</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="792416877701909053" datatype="html">
+        <source> Location </source>
+        <target state="translated">Localização</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-manage-list/src/lib/tabs/settings-tab/settings-tab.component.html</context>
+          <context context-type="linenumber">92</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6751900652205895850" datatype="html">
+        <source>Ex.: Rua dos bobos, 0</source>
+        <target state="translated">Ex.: Rua dos bobos, 0</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-manage-list/src/lib/tabs/settings-tab/settings-tab.component.html</context>
+          <context context-type="linenumber">100</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1216445956577529579" datatype="html">
+        <source> Date </source>
+        <target state="translated">Data</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-manage-list/src/lib/tabs/settings-tab/settings-tab.component.html</context>
+          <context context-type="linenumber">111</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="327141837533286577" datatype="html">
+        <source>Invalid date format</source>
+        <target state="translated">Formato de data inválido</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-manage-list/src/lib/tabs/settings-tab/settings-tab.component.html</context>
+          <context context-type="linenumber">121</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="937000522983110375" datatype="html">
+        <source>Failed to select product. Try again or select another.</source>
+        <target state="translated">Falha ao selecionar o produto. Tente novamente ou selecione outro.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-public-list/src/lib/+state/public-list.effects.ts</context>
+          <context context-type="linenumber">124</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3045649336039619254" datatype="html">
+        <source>Product unselected successfully.</source>
+        <target state="translated">Produto desmarcado com sucesso.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-public-list/src/lib/+state/public-list.effects.ts</context>
+          <context context-type="linenumber">162</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="205221998757541333" datatype="html">
+        <source>Failed to unselect product. Try again or contact the list owner.</source>
+        <target state="translated">Falha ao desmarcar o produto. Tente novamente ou entre em contato com o proprietário da lista.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-public-list/src/lib/+state/public-list.effects.ts</context>
+          <context context-type="linenumber">176</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4011675355875076666" datatype="html">
+        <source> Please inform your name and email to access the list. </source>
+        <target state="translated">Informe seu nome e e-mail para acessar a lista.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-public-list/src/lib/dialogs/new-person-dialog/new-person-dialog.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2026268036220013484" datatype="html">
+        <source> Access list </source>
+        <target state="translated">Acessar lista</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-public-list/src/lib/dialogs/new-person-dialog/new-person-dialog.component.html</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1218605842338834598" datatype="html">
+        <source> Open your payment app or internet banking </source>
+        <target state="translated">Abra seu aplicativo de pagamento ou internet banking</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-public-list/src/lib/dialogs/pix-dialog/pix-dialog.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8173348217303132495" datatype="html">
+        <source>Search for the PIX option</source>
+        <target state="translated">Procure a opção PIX</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-public-list/src/lib/dialogs/pix-dialog/pix-dialog.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3838828841710084746" datatype="html">
+        <source> Copy and paste the following code or scan the QR Code </source>
+        <target state="translated">Copie e cole o seguinte código ou escaneie o QR Code</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-public-list/src/lib/dialogs/pix-dialog/pix-dialog.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8846003640779921796" datatype="html">
+        <source> Copy and paste the following code </source>
+        <target state="translated">Copie e cole o seguinte código</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-public-list/src/lib/dialogs/pix-dialog/pix-dialog.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3904243385445368812" datatype="html">
+        <source>Copied PIX code to Clipboard</source>
+        <target state="translated">Código PIX copiado com sucesso.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-public-list/src/lib/dialogs/pix-dialog/pix-dialog.component.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7118365559392223950" datatype="html">
+        <source>You successfully selected a product.</source>
+        <target state="translated">Você selecionou um produto com sucesso.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-public-list/src/lib/dialogs/selected-product-dialog/selected-product-dialog.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8672885862783041946" datatype="html">
+        <source>You successfully selected a product. You can click in the product bellow to buy it.</source>
+        <target state="translated">Você selecionou um produto com sucesso. Você pode clicar no produto abaixo para comprá-lo.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-public-list/src/lib/dialogs/selected-product-dialog/selected-product-dialog.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4332831111738270314" datatype="html">
+        <source> Buy <x id="START_TAG_HERO_ICON" ctype="x-hero_icon" equiv-text="&lt;hero-icon demo-icon-suffix
+                       name=&quot;external-link&quot;>"/><x id="CLOSE_TAG_HERO_ICON" ctype="x-hero_icon" equiv-text="&lt;/hero-icon>"/></source>
+        <target state="translated"> Comprar <x id="START_TAG_HERO_ICON" ctype="x-hero_icon" equiv-text="&lt;hero-icon demo-icon-suffix
+                       name=&quot;external-link&quot;>"/><x id="CLOSE_TAG_HERO_ICON" ctype="x-hero_icon" equiv-text="&lt;/hero-icon>"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-public-list/src/lib/dialogs/selected-product-dialog/selected-product-dialog.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3909257742723960941" datatype="html">
+        <source>Product saved successfully!</source>
+        <target state="translated">Produto salvo com sucesso!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-save-product/src/lib/+state/save-product.effects.ts</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3582198355480978215" datatype="html">
+        <source>Add Product</source>
+        <target state="translated">Adicionar produto</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-save-product/src/lib/save-product/save-product.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1593608239998075847" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="{{ p"/><x id="INTERPOLATION" equiv-text="e }}"/><x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="selected"/> selected this product.</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/><x id="INTERPOLATION"/><x id="CLOSE_TAG_STRONG" ctype="x-strong"/> selecionou este produto.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-save-product/src/lib/save-product/save-product.component.html</context>
+          <context context-type="linenumber">20,21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4814285799071780083" datatype="html">
+        <source>Remove</source>
+        <target state="translated">Remover</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-save-product/src/lib/save-product/save-product.component.html</context>
+          <context context-type="linenumber">25,26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2025235727014896598" datatype="html">
+        <source> Load product information automatically </source>
+        <target state="translated">Carregar informações do produto automaticamente</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-save-product/src/lib/save-product/save-product.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2618647594586099512" datatype="html">
+        <source> Extract product name, description, price and images from URL </source>
+        <target state="translated">Extraia o nome do produto, descrição, preço e imagens da URL</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-save-product/src/lib/save-product/save-product.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2633475082559327902" datatype="html">
+        <source>The product must have a name</source>
+        <target state="translated">O produto deve ter um nome</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-save-product/src/lib/save-product/save-product.component.html</context>
+          <context context-type="linenumber">80</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="762228006079275636" datatype="html">
+        <source> Price </source>
+        <target state="translated">Preço</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-save-product/src/lib/save-product/save-product.component.html</context>
+          <context context-type="linenumber">110</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2310599324644307538" datatype="html">
+        <source>Estimated price. It does not need to be exact.</source>
+        <target state="translated">Preço estimado. Não precisa ser exato.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-save-product/src/lib/save-product/save-product.component.html</context>
+          <context context-type="linenumber">123</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5911744317051508152" datatype="html">
+        <source> Images </source>
+        <target state="translated">Imagens</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-save-product/src/lib/save-product/save-product.component.html</context>
+          <context context-type="linenumber">138</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4492871004050155394" datatype="html">
+        <source> URL </source>
+        <target state="translated">URL</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-save-product/src/lib/save-product/save-product.component.html</context>
+          <context context-type="linenumber">183</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5804049127842394505" datatype="html">
+        <source>Please provide a valid URL</source>
+        <target state="translated">Forneça um URL válido</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/feature-save-product/src/lib/save-product/save-product.component.html</context>
+          <context context-type="linenumber">192</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3526938798621813727" datatype="html">
+        <source>Make a PIX</source>
+        <target state="translated">Faça um PIX</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/ui/src/lib/list-theme-processor/list-theme-processor.component.html</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1481401462596148015" datatype="html">
+        <source>See product <x id="START_TAG_HERO_ICON" ctype="x-hero_icon" equiv-text="&lt;hero-icon demo-icon-suffix
+                                   name=&quot;external-link&quot;>"/><x id="CLOSE_TAG_HERO_ICON" ctype="x-hero_icon"/></source>
+        <target state="translated">Ver produto <x id="START_TAG_HERO_ICON" ctype="x-hero_icon" equiv-text="&lt;hero-icon demo-icon-suffix
+                                   name=&quot;external-link&quot;>"/><x id="CLOSE_TAG_HERO_ICON" ctype="x-hero_icon" equiv-text="&lt;/hero-icon>"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/ui/src/lib/list-theme-processor/list-theme-processor.component.html</context>
+          <context context-type="linenumber">122</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8363184438562025805" datatype="html">
+        <source>Unselect</source>
+        <target state="translated">Desmarcar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/ui/src/lib/list-theme-processor/list-theme-processor.component.html</context>
+          <context context-type="linenumber">132</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3797570084942068182" datatype="html">
+        <source>Select</source>
+        <target state="translated">Selecionar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/ui/src/lib/list-theme-processor/list-theme-processor.component.html</context>
+          <context context-type="linenumber">138</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/ui/src/lib/list-theme-processor/themes/basic-theme/basic-theme.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5643561794785412000" datatype="html">
+        <source>Unavailable</source>
+        <target state="translated">Indisponível</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/ui/src/lib/list-theme-processor/list-theme-processor.component.html</context>
+          <context context-type="linenumber">143</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8756167649220050929" datatype="html">
+        <source>Lists</source>
+        <target state="translated">Listas</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/ui/src/lib/wish-app-page-wrapper/wish-app-page-wrapper.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3797778920049399855" datatype="html">
+        <source>Logout</source>
+        <target state="translated">Sair</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/wish-app/ui/src/lib/wish-app-page-wrapper/wish-app-page-wrapper.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,75 @@
+<div class="discussion">
+
+    <ng-container *ngIf="user$ | async as user">
+
+        <form [formGroup]="form"
+              class="form">
+
+            <div class="form-content">
+
+                <div class="form-content__avatar">
+                    <demo-avatar [alt]="user.displayName"
+                                [src]="user.profile?.url || null"
+                                size="41px"></demo-avatar>
+                </div>
+
+                <ng-container *ngIf="!(commenting$ | async); else commenting">
+                    <div class="form-content__content">
+                        <demo-form-field>
+                            <textarea name="content"
+                                      type="text"
+                                      demo-input
+                                      rows="1"
+                                      (click)="commentSectionClicked()"
+                                      placeholder="Add a comment..."
+                                      i18n-placeholder
+                    
+                                      >
+                                    </textarea>
+
+                        </demo-form-field>
+                    </div>
+                </ng-container>
+                <ng-template #commenting>
+                    <div class="form-content__content"
+                         id="comment-content">
+
+                        <quill-editor formControlName="content"
+                                      rows="6"
+                                      [modules]="quill"
+                                      placeholder="Add a comment..."
+                                      i18n-placeholder>
+                        </quill-editor>
+
+                    </div>
+                </ng-template>
+
+
+            </div>
+
+            <div *ngIf="commenting$ | async"
+                 class="form-actions">
+                <button demo-text-neutral-button
+                        type="button"
+                        i18n
+                        [disabled]="(savingComment$ | async) || false"
+                        (click)="onCancel()">Cancel</button>
+
+                <button demo-primary-button
+                        type="button"
+                        i18n
+                        (click)="onSubmit()"
+                        [loading]="(savingComment$ | async) || false">Save</button>
+            </div>
+        </form>
+
+
+
+    </ng-container>
+
+    <div class="discussion__comments">
+        <demo-comment-row *ngFor="let comment of comments$ | async; trackBy: trackCommentById"
+                         [comment]="comment"></demo-comment-row>
+    </div>
+
+</div>

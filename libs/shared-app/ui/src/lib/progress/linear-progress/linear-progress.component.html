@@ -1,0 +1,16 @@
+<div class="linear-progress"
+     [class.linear-progress--primary]="theme === 'primary'"
+     [class.linear-progress--accent]="theme === 'accent'"
+     [class.linear-progress--neutral]="theme === 'neutral'"
+     [class.linear-progress--success]="theme === 'success'">
+
+    <div *ngIf="mode === 'determined'"
+         class="linear-progress__bar"
+         [style.width.%]="progress"
+         [style.background-color]="color"></div>
+
+    <div *ngIf="mode === 'undetermined'"
+         class="linear-progress__bar linear-progress__bar--undetermined"
+         [style.background-color]="color"></div>
+
+</div>

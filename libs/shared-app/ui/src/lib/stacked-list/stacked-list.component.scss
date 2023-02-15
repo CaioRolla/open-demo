@@ -1,0 +1,32 @@
+:host {
+  display: block;
+}
+
+.stacked-list {
+  &__pagination {
+    display: none;
+    width: 100%;
+    margin-top: 16px;
+    
+    &:not(:empty) {
+      display: flex;
+    }
+  }
+  &__content {
+    &__content {
+      display: flex;
+      flex-direction: column;
+
+      ::ng-deep demo-stacked-list-row:last-child .stacked-list-row {
+        border: none;
+      }
+    }
+  }
+
+  &--box {
+    ::ng-deep .card {
+      box-shadow: none;
+      border: 1px solid var(--demo-color-neutral-100);;
+    }
+  }
+}

@@ -1,0 +1,117 @@
+:host {
+  display: block;
+}
+
+.asset-upload {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  .clear-button-2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0;
+  }
+
+  &__area {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    // object-fit: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--demo-color-neutral-50);
+    border: 1px dashed var(--demo-color-neutral-300);
+    
+    cursor: pointer;
+
+    &--disabled {
+      cursor: unset !important;
+      background: var(--demo-color-neutral-50) !important;
+    }
+
+    &--rounded {
+      border-radius: 100%;
+    }
+
+    &--square {
+      border-radius: 6px;
+    }
+
+    &:hover {
+      background: var(--demo-color-neutral-100);
+    }
+
+    hero-icon {
+      font-size: 36px;
+      color: var(--demo-color-neutral-500);
+    }
+
+    span {
+      margin-top: 22px;
+      font-size: 14px;
+      color: var(--demo-color-neutral-500);
+      font-weight: 300;
+    }
+  }
+}
+
+.edit-button {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  display: inline-block;
+  background: var(--demo-color-primary-500);
+  color: var(--demo-color-primary-50);
+  line-height: 0;
+  padding: 6px;
+  border-radius: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+.clear-button {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  display: inline-block;
+  color: var(--demo-color-neutral-500);
+  background: transparent;
+  line-height: 0;
+  padding: 6px;
+  border-radius: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+.progress-bar {
+  top: 0;
+  left: 0;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+
+  background: var(--demo-color-neutral-50);
+  border: 1px dashed var(--demo-color-neutral-300);
+
+  &--rounded {
+    border-radius: 100%;
+  }
+
+  &--square {
+    border-radius: 6px;
+  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  demo-linear-progress {
+    width: 50%;
+  }
+  
+}

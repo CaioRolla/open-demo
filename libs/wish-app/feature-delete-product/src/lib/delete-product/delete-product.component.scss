@@ -1,0 +1,18 @@
+.delete-product {
+  width: 80vw;
+  max-width: 620px;
+  padding: 32px 16px;
+  text-align: center;
+
+  p {
+    font-size: var(--demo-fs-400);
+    color: var(--demo-color-neutral-800);
+    font-weight: 300;
+
+
+    &:not(:first-child) {
+      margin-top: 16px;
+    }
+  }
+
+}

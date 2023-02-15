@@ -1,0 +1,29 @@
+<demo-card>
+    <demo-card-simple-header>
+        <ng-container i18n>Delete Product</ng-container>
+    </demo-card-simple-header>
+
+    <div class="delete-product">
+
+        <p i18n>You are about to permanently delete <strong>{{ data.product.name }}</strong>.</p>
+
+        <p i18n>Are you sure you want to continue?</p>
+
+    </div>
+
+    <demo-card-actions-footer>
+        <button demo-text-neutral-button
+                i18n
+                (click)="onCancel()">
+            Cancel
+        </button>
+
+        <button type="button"
+                demo-danger-button
+                [loading]="(deleting$ | async) || false"
+                (click)="onSubmit()"
+                i18n>
+            Delete
+        </button>
+    </demo-card-actions-footer>
+</demo-card>

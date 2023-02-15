@@ -1,0 +1,41 @@
+<div class="browser-frame">
+
+    <div class="browser-frame__top">
+        <div class="browser-frame__top__controls">
+
+            <div class="browser-frame__top__controls__item"></div>
+            <div class="browser-frame__top__controls__item"></div>
+            <div class="browser-frame__top__controls__item"></div>
+
+        </div>
+
+        <div class="browser-frame__top__back-next">
+            <div class="browser-frame__top__back-next__item">
+                <hero-icon name="chevron-left"></hero-icon>
+            </div>
+            <div class="browser-frame__top__back-next__item">
+                <hero-icon name="chevron-right"></hero-icon>
+            </div>
+        </div>
+
+        <div class="browser-frame__top__bar">
+
+            <div class="browser-frame__top__bar__title">{{ barText }}</div>
+
+            <div class="browser-frame__top__bar__icon">
+                <hero-icon name="refresh"></hero-icon>
+
+            </div>
+
+        </div>
+
+        <div class="browser-frame__top__expand">
+            <hero-icon name="menu"></hero-icon>
+        </div>
+    </div>
+
+    <div class="browser-frame__content">
+        <ng-content></ng-content>
+    </div>
+
+</div>

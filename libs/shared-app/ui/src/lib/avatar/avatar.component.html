@@ -1,0 +1,19 @@
+<div class="avatar">
+
+    <div *ngIf="!src"
+         class="alt"
+         [style.height]="size"
+         [style.width]="size"
+         [style.background]="$any(letterColorMap)[alt[0].toUpperCase()]">
+
+        {{ alt | altLetters }}
+
+    </div>
+
+    <img [style.height]="size"
+         [style.width]="size"
+         *ngIf="src"
+         [src]="src"
+         [attr.alt]="alt" />
+
+</div>

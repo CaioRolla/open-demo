@@ -1,0 +1,4 @@
+<ng-container #featureContainer></ng-container>
+<div *ngIf="loading$ | async">
+  <ng-container [ngTemplateOutlet]="loadingTemplate"></ng-container>
+</div>

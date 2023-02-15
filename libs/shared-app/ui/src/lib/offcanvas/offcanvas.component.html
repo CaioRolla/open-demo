@@ -1,0 +1,23 @@
+<div
+    class="offcanvas"
+    [@appear]="state$ | async"
+    (@appear.done)="animationFinished($event)"
+    (@appear.start)="animationStarted($event)"
+>
+
+    <div
+        class="offcanvas__shadow"
+        (click)="close()"
+        [@shadow]="state$ | async"
+        
+    >
+
+    </div>
+
+    <div [@content]="state$ | async"  class="offcanvas__content">
+
+        <ng-template #content></ng-template>
+
+    </div>
+
+</div>

@@ -1,0 +1,1 @@
+export type DemoColorScheme = 'primary' | 'accent' | 'neutral' | 'danger' | 'success' | 'warning';

@@ -1,0 +1,47 @@
+<div class="theme">
+
+
+    <header class="header" [class.header--no-banner]="!bannerUrl">
+
+        <div *ngIf="bannerUrl" class="header__banner">
+            <img
+                 [src]="bannerUrl"
+                 [attr.alt]="name">
+        </div>
+
+        <div *ngIf="profileUrl"
+             class="header__profile">
+            <img [src]="profileUrl"
+                 [attr.alt]="name">
+        </div>
+
+    </header>
+
+    <section class="info">
+        <h1>{{ name }}</h1>
+        <p *ngIf="desc">{{ desc }}</p>
+    </section>
+
+    <main class="products">
+
+        <div *ngFor="let product of products"
+             class="product">
+
+            <img [src]="product.previewUrl">
+
+            <h2>{{ product.name }}</h2>
+
+
+            <div class="product__actions">
+                <button>
+                    <hero-icon name="check"></hero-icon> <span i18n>Select</span>
+                </button>
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+</div>

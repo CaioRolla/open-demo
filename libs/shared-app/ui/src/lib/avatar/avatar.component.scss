@@ -1,0 +1,23 @@
+:host {
+  display: block;
+}
+
+.avatar {
+  user-select: none;
+  
+  .alt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: var(--demo-fs-300);
+    color: var(--demo-color-neutral-0);
+    border-radius: 100%;
+    font-weight: 500;
+  }
+  img {
+    border-radius: 100%;
+    object-fit: cover;
+  }
+}

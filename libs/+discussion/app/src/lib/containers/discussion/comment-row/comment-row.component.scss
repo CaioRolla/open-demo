@@ -1,0 +1,71 @@
+:host {
+  display: block;
+}
+
+
+.comment-row {
+  display: flex;
+  flex-direction: row;
+  grid-gap: 16px;
+  padding: 16px;
+
+  &:hover {
+    background: var(--demo-color-neutral-50);
+  }
+
+  .info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 2px;
+
+    .info-header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      grid-gap: 8px;
+
+
+      &__name {
+        font-size: var(--demo-fs-300);
+        color: var(--demo-color-neutral-800);
+        font-weight: 500;
+      }
+
+      &__date {
+        font-size: var(--demo-fs-200);
+        color: var(--demo-color-neutral-600);
+        font-weight: 500;
+      }
+
+    }
+
+    .info-content {
+      ::ng-deep .ql-editor {
+        padding: 0;
+      }
+    }
+
+    .info-actions {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      grid-gap: 4px;
+      margin-top: 16px;
+
+      &__spacer {
+        display: inline-block;
+        line-height: 0;
+        color: var(--demo-color-neutral-400);
+      }
+
+      button, &__spacer {
+        padding: 0;
+        font-weight: 400;
+        font-size: var(--demo-fs-200);
+      }
+    }
+
+  }
+
+}

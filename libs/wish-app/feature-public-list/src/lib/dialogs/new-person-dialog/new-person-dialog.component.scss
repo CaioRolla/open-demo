@@ -1,0 +1,18 @@
+:host {
+  display: block;
+}
+
+.dialog {
+  width: 82vw;
+  max-width: 620px;
+  padding: 16px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  demo-form-field {
+    width: 100%;
+  }
+}

@@ -1,0 +1,15 @@
+<div
+    [@appear]="open$ | async"
+    (@appear.start)="animationActive$.next(true)"
+    (@appear.done)="animationActive$.next(false)"
+    class="snackbar snackbar--right snackbar--{{ position }}"
+>
+    <div class="snackbar__icon snackbar__icon--{{color}}" *ngIf="icon">
+        <hero-icon [name]="icon"></hero-icon>
+    </div>
+    <div
+        class="snackbar__content snackbar__content--{{color}}"
+    >
+        <div class="snackbar__content__text">{{ message }}</div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="divided-page-wrapper">
+
+    <section class="divided-page-wrapper__left">
+
+        <div class="left-content">
+            <header class="left-content__header">
+
+                <img [src]="applicationLogoUrl">
+
+            </header>
+            <h1 *ngIf="pageTitle"
+                class="left-content__title">{{ pageTitle }}</h1>
+                <h1 *ngIf="pageSubTitle"
+                class="left-content__subtitle">{{ pageSubTitle }}</h1>
+
+            <main class="left-content__main">
+                <ng-content></ng-content>
+            </main>
+        </div>
+
+    </section>
+
+    <section class="divided-page-wrapper__right"
+             *ngIf="iframeUrl">
+
+        <iframe [src]="iframeUrl | safeUrl"
+                frameBorder="0"></iframe>
+
+    </section>
+
+</div>

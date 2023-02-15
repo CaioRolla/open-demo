@@ -1,0 +1,27 @@
+:host {
+  display: block;
+}
+
+.settings-tab {
+  padding-top: 14px;
+}
+
+.form {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+
+  &__name {
+    demo-form-field {
+      max-width: 360px;
+    }
+  }
+
+  &__event-date {
+    margin-top: 16px;
+
+    demo-form-field {
+      max-width: 260px;
+    }
+  }
+}

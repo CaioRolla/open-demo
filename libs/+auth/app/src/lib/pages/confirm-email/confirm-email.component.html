@@ -1,0 +1,26 @@
+<demo-divided-page-wrapper [applicationLogoUrl]="config.applicationLogoUrl"
+                          [iframeUrl]="config.signInMerchUrl">
+
+
+    <div class="confirm-email">
+
+        <div class="confirm-email__icon">
+            🎉
+        </div>
+
+        <div class="confirm-email__text">
+            A confirmation email was sent to <strong>{{email}}</strong>.
+        </div>
+
+        <div class="confirm-email__resend">
+
+            <button [loading]="(loading$ | async) || false"
+                    demo-button
+                    (click)="resendConfirmation()">Resend email</button>
+
+        </div>
+
+    </div>
+
+
+</demo-divided-page-wrapper>

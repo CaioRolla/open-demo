@@ -1,0 +1,146 @@
+<div class="settings-tab">
+
+    <demo-card>
+
+        <form [formGroup]="form"
+              class="form">
+
+
+            <div class="form__name">
+                <demo-form-field>
+                    <label for="productName"
+                           demo-label
+                           i18n>
+                        Name
+                    </label>
+                    <input name="productName"
+                           formControlName="name"
+                           type="text"
+                           demo-input
+                           maxlength="500">
+                </demo-form-field>
+            </div>
+
+            <div class="form__desc">
+                <demo-form-field>
+                    <label for="productDesc"
+                           [optional]="true"
+                           demo-label
+                           i18n>
+                        Description
+                    </label>
+                    <textarea name="productDesc"
+                              formControlName="desc"
+                              type="text"
+                              demo-input
+                              rows="4"
+                              maxlength="500"></textarea>
+
+                </demo-form-field>
+            </div>
+
+            <demo-form-section-separator></demo-form-section-separator>
+
+            <demo-form-section-header>
+                <h2 demo-form-section-header-title
+                    i18n>
+                    💵 Pix
+                </h2>
+                <p demo-form-section-header-subtitle
+                   i18n>
+                    Allow your friends to send you a PIX!
+                </p>
+            </demo-form-section-header>
+
+
+            <div class="form__pix">
+                <demo-form-field>
+                    <label for="pix"
+                           demo-label
+                           i18n>
+                        Chave PIX
+                    </label>
+                    <input name="pix"
+                           formControlName="pix"
+                           type="text"
+                           demo-input
+                           maxlength="255">
+                </demo-form-field>
+            </div>
+
+
+
+            <demo-form-section-separator></demo-form-section-separator>
+
+            <demo-form-section-header>
+                <h2 demo-form-section-header-title
+                    i18n>
+                    🗓 Event Information
+                </h2>
+                <p demo-form-section-header-subtitle
+                   i18n>
+                    Let your friends and family know when and where the event is going to happen.
+                </p>
+            </demo-form-section-header>
+
+            <div class="form__event-location">
+                <demo-form-field>
+                    <label for="eventLocation"
+                           demo-label
+                           [optional]="true"
+                           i18n>
+                        Location
+                    </label>
+                    <input name="eventLocation"
+                           formControlName="eventLocation"
+                           type="text"
+                           demo-input
+                           maxlength="300">
+                    <demo-hint>
+                        <ng-container i18n>Ex.: Rua dos bobos, 0</ng-container>
+                    </demo-hint>
+                </demo-form-field>
+            </div>
+
+            <div class="form__event-date">
+                <demo-form-field>
+                    <label for="eventDate"
+                           demo-label
+                           [optional]="true"
+                           i18n>
+                        Date
+                    </label>
+                    <input name="eventDate"
+                           autocomplete="off"
+                           formControlName="eventDate"
+                           demo-input
+                           type="datetime-local">
+
+
+                    <demo-error *ngIf="eventDateControl.hasError('format')">
+                        <ng-container i18n>Invalid date format</ng-container>
+                    </demo-error>
+
+                </demo-form-field>
+            </div>
+
+        </form>
+
+
+
+        <demo-card-actions-footer>
+
+            <button type="button"
+                    demo-primary-button
+                    [loading]="(patchingList$ | async) || false"
+                    (click)="onSubmit()"
+                    i18n>
+                Save
+            </button>
+
+        </demo-card-actions-footer>
+
+    </demo-card>
+
+
+</div>

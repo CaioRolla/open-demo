@@ -1,0 +1,54 @@
+:host {
+  display: block;
+}
+
+.discussion {
+  display: flex;
+  flex-direction: column;
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+
+    .form-content {
+      display: flex;
+      flex-direction: row;
+      grid-gap: 16px;
+
+      &__content {
+        flex: 1;
+        display: block;
+        height: 100%;
+
+        textarea {
+          resize: none;
+        }
+
+        ::ng-deep .form-field__messages {
+          &:empty {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .form-actions {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      grid-gap: 16px;
+      margin-top: 16px;
+    }
+  }
+
+  &__comments {
+    display: flex;
+    flex-direction: column;
+
+
+    &:empty {
+      display: none;
+    }
+  }
+}

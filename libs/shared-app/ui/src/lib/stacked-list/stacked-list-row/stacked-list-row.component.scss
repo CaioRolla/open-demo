@@ -1,0 +1,18 @@
+:host {
+  display: block;
+}
+
+.stacked-list-row {
+
+  padding: 16px;
+
+  border-bottom: 1px solid var(--demo-color-neutral-100);
+
+  font-size: var(--demo-fs-200);
+  font-weight: 300;
+
+  &:hover {
+    background: var(--demo-color-neutral-50);
+  }
+
+}

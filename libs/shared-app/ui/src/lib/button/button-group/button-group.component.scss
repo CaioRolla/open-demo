@@ -1,0 +1,21 @@
+:host {
+  display: inline-block;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: row;
+
+  &::ng-deep button,
+  &::ng-deep a {
+    &:not(:first-child) {
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-left: none;
+    }
+    &:not(:last-child) {
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
+  }
+}

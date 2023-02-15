@@ -1,0 +1,24 @@
+<div class="top-bar">
+
+    <div class="top-bar__toggle-navbar">
+
+        <button demo-topbar-button (click)="toggleSidebar()">
+            <hero-icon name="menu-alt-1"></hero-icon>
+        </button>
+
+    </div>
+
+    <div class="top-bar__logo" [class.top-bar__logo--always]="alwaysShowLogo">
+
+        <ng-content select="[demo-topbar-logo]"></ng-content>
+
+    </div>
+
+    <div class="top-bar__content">
+
+        <ng-content></ng-content>
+
+    </div>
+
+
+</div>

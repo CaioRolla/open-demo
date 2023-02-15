@@ -1,0 +1,12 @@
+<button
+    (click)="clickEvent.emit()"
+    class="tab-header"
+    [class.tab-header--selected]="selected$ | async"
+    [disabled]="disabled"
+>
+    <div class="tab-header__content">
+        <ng-content select="*[demo-tab-header-prefix]"></ng-content>
+        <ng-content></ng-content>
+        <ng-content select="*[demo-tab-header-suffix]"></ng-content>
+    </div>
+</button>

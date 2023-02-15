@@ -1,0 +1,21 @@
+<div
+    class="button__content"
+    [class.button__content--loading]="loading"
+>
+    <ng-content select="*[demo-icon-prefix]"></ng-content>
+    <ng-content></ng-content>
+    <ng-content select="*[demo-icon-suffix]"></ng-content>
+</div>
+
+<ng-container *ngIf="loading">
+    <div class="button__loading">
+        <demo-spinner-progress
+            [attr.primary]="isReversePrimary || isTextPrimary || isTextNeutral || isTextPrimary ? true : undefined"
+            [attr.reverse-primary]="isPrimary ? true : undefined"
+            [attr.accent]="isReverseAccent || isTextAccent ? true : undefined"
+            [attr.reverse-accent]="isAccent ? true : undefined"
+            [attr.neutral]="isNeutral ? true : undefined"
+            [attr.danger]="isTextDanger ? true : undefined"
+        ></demo-spinner-progress>
+    </div>
+</ng-container>

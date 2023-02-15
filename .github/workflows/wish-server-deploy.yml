@@ -1,0 +1,89 @@
+name: 'wish-server-deploy'
+
+# on:
+#   workflow_run:
+#     workflows: ["run-tests"]
+#     branches: [ main ]
+#     types:
+#       - completed
+
+# on:
+#   push:
+#     paths:
+#       - 'apps/wish-server/**'
+#       - 'libs/shared-server/**'
+#       - 'libs/shared/**'
+#       - 'libs/+auth/**'
+#       - 'libs/wish-shared/**'
+#       - '.github/workflows/wish-server-deploy.yml'
+#       - 'angular.json'
+#       - 'package.json'
+#     branches:
+#       - main
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ahmadnassri/action-workflow-run-wait@v1
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Build, tag, and push image to Amazon ECR
+        id: build-image
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REPOSITORY: wish-server
+          IMAGE_TAG: ${{ github.sha }}
+          DOCKERFILE_PATH: ./apps/wish-server/Dockerfile
+        run: |
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -t $ECR_REGISTRY/$ECR_REPOSITORY:latest -f $DOCKERFILE_PATH .
+          docker push -a $ECR_REGISTRY/$ECR_REPOSITORY
+          echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+
+      - name: Download task definition
+        run: |
+          aws ecs describe-task-definition --task-definition wish-server-task-definition --query taskDefinition > task-definition.json
+
+      - name: Fill in the new image ID in the Amazon ECS task definition
+        id: taskdef
+        uses: aws-actions/amazon-ecs-render-task-definition@v1
+        with:
+          task-definition: task-definition.json
+          container-name: wish-server-container
+          image: ${{ steps.build-image.outputs.image }}
+
+      - name: Install dependencies
+        run: npm install --force 
+
+      - name: Run migrations
+        env:
+          DATABASE_TYPE: ${{ secrets.WISH_SERVER_DATABASE_TYPE }}
+          DATABASE_HOST: ${{ secrets.WISH_SERVER_DATABASE_HOST }}
+          DATABASE_PORT: ${{ secrets.WISH_SERVER_DATABASE_PORT }}
+          DATABASE_USERNAME: ${{ secrets.WISH_SERVER_DATABASE_USERNAME }}
+          DATABASE_PASS: ${{ secrets.WISH_SERVER_DATABASE_PASS }}
+          DATABASE_NAME: ${{ secrets.WISH_SERVER_DATABASE_NAME }}
+        run: |
+          npm run wish-server:migration:run:ci
+
+      - name: Deploy Amazon ECS task definition
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+        with:
+          task-definition: ${{ steps.taskdef.outputs.task-definition }}
+          service: wish-server-service
+          cluster: rolla-cluster
+          wait-for-service-stability: true

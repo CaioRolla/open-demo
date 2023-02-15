@@ -1,0 +1,19 @@
+<div class="backdrop" [class.backdrop--closed]="!(sidebarIsOpen$ | async)" (click)="closeSidebar()"></div>
+<div
+    class="sidebar"
+    [class.sidebar--closed]="!(sidebarIsOpen$ | async)"
+>
+
+    <div class="sidebar__header">
+        <ng-content select="[demo-sidebar-logo]"></ng-content>
+    </div>
+
+    <div class="sidebar__content">
+        <ng-content></ng-content>
+    </div>
+
+    <div class="sidebar__footer">
+        <ng-content select="[demo-sidebar-footer]"></ng-content>
+    </div>
+
+</div>

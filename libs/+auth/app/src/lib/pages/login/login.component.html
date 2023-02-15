@@ -1,0 +1,94 @@
+<demo-divided-page-wrapper pageTitle="Login ✌️"
+                          pageSubTitle="Please log in to access your account."
+                          i18n-pageSubTitle
+                          i18n-pageTitle
+                          [applicationLogoUrl]="config.applicationLogoUrl"
+                          [iframeUrl]="config.signInMerchUrl">
+
+
+    <div class="login">
+        <demo-google-auth-button *ngIf="googleAuthUrl"
+                                [href]="googleAuthUrl"></demo-google-auth-button>
+
+        <div class="divider">
+            <div class="divider__dash">
+
+            </div>
+            <div class="divider__text">
+                Or
+            </div>
+            <div class="divider__dash">
+
+            </div>
+        </div>
+        <div class="login__email">
+            <form [formGroup]="form"
+                  class="login-form">
+
+                <demo-form-field>
+                    <label for="email"
+                           demo-label
+                           i18n>
+                        Email
+                    </label>
+                    <input name="email"
+                           formControlName="email"
+                           type="email"
+                           demo-input>
+
+                    <demo-error *ngIf="emailControl.hasError('required')">
+                        <ng-container i18n>The email field is required.</ng-container>
+                    </demo-error>
+
+                    <demo-error *ngIf="emailControl.hasError('email')">
+                        <ng-container i18n>Invalid email format.</ng-container>
+                    </demo-error>
+
+                    <demo-error *ngIf="emailControl.hasError('failed')">
+                        <ng-container i18n>Incorrect email and/or password.</ng-container>
+                    </demo-error>
+                </demo-form-field>
+
+                <demo-form-field>
+                    <label for="password"
+                           demo-label
+                           i18n>
+                        Password
+                    </label>
+                    <input name="password"
+                           formControlName="password"
+                           type="password"
+                           demo-input>
+
+                    <demo-error *ngIf="passwordControl.hasError('required')">
+                        <ng-container i18n>The password field is required.</ng-container>
+                    </demo-error>
+                    <demo-error *ngIf="passwordControl.hasError('failed')">
+                        <ng-container i18n>Incorrect email and/or password.</ng-container>
+                    </demo-error>
+                </demo-form-field>
+
+
+                <button demo-primary-button
+                        [loading]="(loading$ | async) || false"
+                        class="login-form__submit"
+                        (click)="onSubmit()"
+                        i18n>Login</button>
+
+                <div class="login-form__sign-up"
+                     i18n>
+                    Don't have an account? <a [routerLink]="['/', 'auth', 'sign-up']">Sign up Today</a>
+                </div>
+
+                <div class="login-form__forgot">
+                    <a [routerLink]="['/', 'auth', 'forgot-password']"
+                       i18n>Forgot password</a>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+
+
+</demo-divided-page-wrapper>

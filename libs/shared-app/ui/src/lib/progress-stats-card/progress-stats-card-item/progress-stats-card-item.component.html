@@ -1,0 +1,59 @@
+<div
+    class="progress-stats-card-item"
+    *ngIf="!loading"
+>
+
+    <div class="progress-stats-card-item__info">
+
+        <div
+            class="progress-stats-card-item__info__value"
+            [style.color]="color"
+        >
+            {{ value }}
+        </div>
+
+        <div class="progress-stats-card-item__info__label">{{ label }}</div>
+
+    </div>
+
+    <div class="progress-stats-card-item__progress">
+        <demo-linear-progress
+            [color]="color"
+            [progress]="percentage"
+            [demoTooltip]="((percentage || 0) / 100 | percent) || ''"
+        ></demo-linear-progress>
+    </div>
+
+</div>
+
+<div
+    class="progress-stats-card-item"
+    *ngIf="loading"
+>
+
+    <div class="progress-stats-card-item__info">
+
+        <div
+            class="progress-stats-card-item__info__value"
+            [style.color]="color"
+        >
+            <div
+                demoLoadingPlaceholder
+                style="height: var(--demo-fs-400); width:20px; margin-left: auto;"
+            ></div>
+        </div>
+
+        <div class="progress-stats-card-item__info__label">
+
+        </div>
+
+    </div>
+
+    <div class="progress-stats-card-item__progress">
+        <div
+            demoLoadingPlaceholder
+            style="width:100%; margin-left: auto; margin-top: 2px; height: 28px;"
+        ></div>
+    </div>
+
+</div>

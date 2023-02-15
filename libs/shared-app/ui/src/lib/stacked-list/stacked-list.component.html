@@ -1,0 +1,24 @@
+<div class="stacked-list stacked-list--{{mode}}">
+
+    <demo-card [noPadding]="true">
+        <div class="stacked-list__content">
+
+            <div class="stacked-list__content__header">
+                <ng-content select="demo-stacked-list-header"></ng-content>
+            </div>
+
+            <div class="stacked-list__content__content">
+
+                <ng-content select="demo-stacked-list-row"></ng-content>
+
+            </div>
+
+        </div>
+
+        <ng-content ngProjectAs="demo-card-actions-footer" select="demo-card-actions-footer"></ng-content>
+    </demo-card>
+
+    <div class="stacked-list__pagination">
+        <ng-content select="demo-paginator"></ng-content>
+    </div>
+</div>

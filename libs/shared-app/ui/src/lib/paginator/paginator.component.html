@@ -1,0 +1,34 @@
+<div class="paginator">
+
+    <div class="paginator__info"
+         i18n>
+        Showing {{ showingCount }} of {{ totalCount }} results
+    </div>
+
+    <div class="paginator__actions">
+
+        <div class="loading"
+             *ngIf="loading"
+             i18n>Loading...</div>
+
+        <div class="buttons">
+            <button demo-button
+                    [disabled]="disablePrevious"
+                    (click)="previousClicked.emit()">
+
+                <hero-icon name="chevron-left"></hero-icon>
+
+            </button>
+
+            <button demo-button
+                    [disabled]="disableNext"
+                    (click)="nextClicked.emit()">
+
+                <hero-icon name="chevron-right"></hero-icon>
+
+            </button>
+        </div>
+
+    </div>
+
+</div>

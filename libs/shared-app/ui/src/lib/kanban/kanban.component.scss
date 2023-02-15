@@ -1,0 +1,33 @@
+:host {
+  display: block;
+}
+
+.kanban {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 22px;
+
+
+  &__header,
+  &__columns {
+    display: flex;
+    flex-direction: row;
+    grid-gap: 22px;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  &__columns-group {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 8px;
+    white-space: nowrap;
+    width: fit-content;
+
+    &:empty {
+      display: none;
+    }
+  }
+}

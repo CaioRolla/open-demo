@@ -1,0 +1,90 @@
+:host {
+  display: block;
+}
+
+.stats-card {
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      grid-gap: 4px;
+
+      &__title {
+        font-size: var(--demo-fs-200);
+        color: var(--demo-color-neutral-400);
+        font-weight: 400;
+      }
+
+
+      &__subtitle {
+        font-size: var(--demo-fs-200);
+        color: var(--demo-color-neutral-400);
+        font-weight: 400;
+
+        &:empty {
+          display: none;
+        }
+      }
+
+      &__value {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        grid-gap: 4px;
+        &__number {
+          font-size: var(--demo-fs-600);
+          line-height: var(--demo-fs-600);
+          font-weight: 700;
+          color: var(--demo-color-neutral-700);
+        }
+        &__delta {
+          font-size: var(--demo-fs-200);
+          color: var(--demo-color-neutral-400);
+          font-weight: 400;
+  
+          &:empty {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &__icon {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 6px;
+      margin-right: 16px;
+
+
+      background: var(--demo-color-primary-600);
+      color: var(--demo-color-primary-0);
+
+      &:empty {
+        display: none;
+      }
+
+      ::ng-deep hero-icon {
+        font-size: 24px;
+        line-height: 0px;
+      }
+
+      ::ng-deep *[demo-stats-card-icon] {
+        font-size: 24px;
+        line-height: 0px;
+
+      }
+    }
+  }
+}

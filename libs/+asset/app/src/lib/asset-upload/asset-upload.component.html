@@ -1,0 +1,79 @@
+<input #input
+       type="file"
+       name="asset"
+       enctype="multipart/form-data"
+       [attr.multiple]="multiple || null"
+       [accept]="accept"
+       (change)="inputChanged($any($event.target)?.files)"
+       (blur)="onTouched()"
+       [disabled]="disabled$ | async"
+       hidden>
+
+<div cdkDropListGroup
+     class="asset-upload">
+
+    <button (click)="input.click()"
+            class="asset-upload__area">
+
+        <hero-icon name="upload"></hero-icon>
+
+        <span i18n>
+            Drag and drop or
+            <a href="javascript:"
+               (click)="$event.stopPropagation(); input.click()">
+                browse
+            </a>
+            your files.
+        </span>
+
+    </button>
+
+    <div class="asset-upload__files"
+         cdkDropList
+         [cdkDropListDisabled]="!canReorder"
+         [cdkDropListData]="data$ | async"
+         (cdkDropListDropped)="onDropFile($event)">
+
+        <div class="asset-upload__files__file"
+             [class.asset-upload__files__file--can-reorder]="canReorder"
+             *ngFor="let data of data$ | async; trackBy:trackByFileName"
+             cdkDrag>
+
+            <!-- <div class="asset-upload__files__file__drag">
+              <hero-icon name="selector"></hero-icon>
+            </div> -->
+
+            <div *ngIf="!data.hasPreview"
+                 class="asset-upload__files__file__icon">{{ data.extension }}</div>
+            <div *ngIf="data.hasPreview"
+                 class="asset-upload__files__file__preview">
+                <img [src]="data.previewSrc">
+            </div>
+            <div class="asset-upload__files__file__info"
+                 [class.asset-upload__files__file__info--pending]="data.status === AssetUploadStatus.PENDING"
+                 [class.asset-upload__files__file__info--uploading]="data.status === AssetUploadStatus.UPLOADING"
+                 [class.asset-upload__files__file__info--complete]="data.status === AssetUploadStatus.COMPLETE"
+                 [class.asset-upload__files__file__info--edit]="data.status === AssetUploadStatus.EDIT">
+                <div class="asset-upload__files__file__info__name">{{ data.fileName }}</div>
+                <div class="asset-upload__files__file__info__progress">
+                    <demo-linear-progress [progress]="data.progress"
+                                         [theme]="data | dataProgressTheme"></demo-linear-progress>
+                </div>
+                <div class="asset-upload__files__file__info__number">{{ data | dataProgressFormatter }}</div>
+
+            </div>
+            <div class="asset-upload__files__file__action">
+                <button demo-text-neutral-button
+                        (click)="removeFile(data.fileName)">
+                    <hero-icon name="x"></hero-icon>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- <p>{{ loading$ | async }}</p>
+
+<p>{{ uploading$ | async }}</p> -->

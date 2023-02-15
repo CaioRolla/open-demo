@@ -1,0 +1,154 @@
+.sidebar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-height: 100%;
+  background: var(--demo-color-neutral-800);
+
+  width: 260px;
+
+  transition: width 0.2s ease-in-out;
+
+  &__header {
+    display: flex;
+    flex-direction: colum;
+    justify-content: center;
+    align-items: center;
+
+    height: 64px;
+
+    ::ng-deep [demo-sidebar-logo] {
+      max-height: 42px;
+    }
+  }
+
+  &__content{
+    flex-grow: 1;
+  }
+
+  &__content, &__footer {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+
+    ::ng-deep a, ::ng-deep button:not([demo-primary-button]) {
+      color: var(--demo-color-neutral-400);
+      background: transparent;
+      border: none;
+      transition: all 0.1s ease-in-out;
+      text-decoration: none;
+      padding: 16px;
+      border-radius: 8px;
+      line-height: 0px;
+      text-align: left;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      overflow-x: hidden;
+      cursor: pointer;
+      outline: unset;
+
+      span {
+        display: inline-block;
+        font-weight: 400;
+        font-size: 14px;
+        margin-left: 16px;
+        color: var(--demo-color-neutral-200);
+        width: 100%;
+        white-space: nowrap;
+      }
+
+      hero-icon {
+        height: 22px !important;
+        width: auto !important;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: var(--demo-color-neutral-100);
+        background: var(--demo-color-neutral-900);
+      }
+
+      &:not(:first-child) {
+        margin-top: 8px;
+      }
+    }
+
+    ::ng-deep  .is-active {
+      background: var(--demo-color-primary-600) !important;
+      color: var(--demo-color-primary-50) !important;
+      span {
+        color: var(--demo-color-primary-50) !important;
+      }
+    }
+  }
+
+  &__footer {
+    &:empty {
+      display: none;
+    }
+  }
+
+  &--closed {
+    width: 86px;
+
+    .sidebar {
+      &__content {
+        ::ng-deep a {
+          span {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    position: fixed;
+    z-index: 999;
+    width: 260px;
+
+    transition: transform 0.2s ease-in-out;
+
+    &--closed {
+      transform: translateX(-260px);
+    }
+
+    .sidebar {
+
+      &__content {
+        ::ng-deep a {
+          span {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}
+
+.backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 800;
+
+  background: black;
+  opacity: .7;
+
+  @media screen and (max-width: 600px) {
+    display: block;
+  }
+
+  &--closed {
+    display: none;
+  }
+}

@@ -1,0 +1,40 @@
+<div class="notification-list">
+
+    <div *ngIf="!(notificationsCount$ | async); else list"
+         class="empty"
+         i18n>
+        You don't have any notifications yet.
+    </div>
+
+    <ng-template #list>
+        <div *ngFor="let notification of notifications$ | async; trackBy: trackById"
+             class="notification">
+
+            <a [href]="notification.url"
+               *ngIf="notification.url; else content">
+                <ng-container *ngTemplateOutlet="content"></ng-container>
+            </a>
+
+            <ng-template #content>
+                <div class="notification-info">
+                    <div class="notification-info__title">
+                        {{ notification.title }}
+                    </div>
+
+                    <div class="notification-info__desc">
+                        {{ notification.desc }}
+                    </div>
+                </div>
+
+                <div class="notification-viewed">
+                    <div *ngIf="!notification.viewed"
+                         class="notification-viewed__icon">
+
+                    </div>
+                </div>
+            </ng-template>
+
+        </div>
+    </ng-template>
+
+</div>

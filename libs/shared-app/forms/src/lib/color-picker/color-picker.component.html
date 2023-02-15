@@ -1,0 +1,19 @@
+<button [colorPicker]="form.value"
+        (colorPickerChange)="valueChanged($event)"
+        (cpToggleChange)="cpToggleChange($event)"
+        cpOutputFormat="hex"
+        class="picker"
+
+        #trigger>
+
+    <div class="square"
+         [style.background]="form.value">
+
+    </div>
+
+    <div class="text">
+        <span class="text__simbol">#</span>
+        <span class="text__color">{{ color$ | async }}</span>
+    </div>
+
+</button>

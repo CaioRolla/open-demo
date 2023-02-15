@@ -1,0 +1,14 @@
+{
+  "xliffmergeOptions": {
+    "srcDir": "apps/wish-app/locale",
+    "genDir": "apps/wish-app/locale",
+    "defaultLanguage": "en",
+    "beautifyOutput": true,
+    "autotranslate": true,
+    "apikey": "AIzaSyBSZo_pPoeKvWlwHR9rQQy4To2cqgX3YOs",
+    "languages": [
+      "en",
+      "pt"
+    ]
+  }
+}

@@ -1,0 +1,122 @@
+<demo-divided-page-wrapper pageTitle="Sign Up 🎉"
+                          pageSubTitle="Create an account to start using {{ config.appName }}."
+                          i18n-pageTitle
+                          i18n-pageSubTitle
+                          [applicationLogoUrl]="config.applicationLogoUrl"
+                          [iframeUrl]="config.signInMerchUrl">
+
+
+    <div class="register">
+
+        <demo-google-auth-button *ngIf="googleAuthUrl"
+                                [href]="googleAuthUrl"></demo-google-auth-button>
+
+        <div class="divider">
+            <div class="divider__dash">
+
+            </div>
+            <div class="divider__text" i18n>
+                Or
+            </div>
+            <div class="divider__dash">
+
+            </div>
+        </div>
+
+        <div class="register__email">
+            <form [formGroup]="form"
+                  class="register-form">
+
+                <demo-form-field>
+                    <label for="name"
+                           demo-label
+                           i18n>
+                        Name
+                    </label>
+                    <input name="name"
+                           formControlName="name"
+                           type="text"
+                           demo-input>
+
+                    <demo-error *ngIf="nameControl.hasError('required')">
+                        <ng-container i18n>The name field is required.</ng-container>
+                    </demo-error>
+                </demo-form-field>
+
+                <demo-form-field>
+                    <label for="email"
+                           demo-label
+                           i18n>
+                        Email
+                    </label>
+                    <input name="email"
+                           formControlName="email"
+                           type="email"
+                           [disabled]="!!email"
+                           demo-input>
+
+                    <demo-error *ngIf="emailControl.hasError('required')">
+                        <ng-container i18n>The email field is required.</ng-container>
+                    </demo-error>
+
+                    <demo-error *ngIf="emailControl.hasError('email')">
+                        <ng-container i18n>Invalid email format.</ng-container>
+                    </demo-error>
+                </demo-form-field>
+
+                <demo-form-field>
+                    <label for="password"
+                           demo-label
+                           i18n>
+                        Password
+                    </label>
+                    <input name="password"
+                           formControlName="password"
+                           type="password"
+                           demo-input>
+
+                    <demo-error *ngIf="passwordControl.hasError('required')">
+                        <ng-container i18n>The password field is required.</ng-container>
+                    </demo-error>
+
+                    <demo-error *ngIf="passwordControl.hasError('minlength')">
+                        <ng-container i18n>The password must have at least 5 characters.</ng-container>
+                    </demo-error>
+                </demo-form-field>
+
+                <demo-form-field>
+                    <label for="confirmPassword"
+                           demo-label
+                           i18n>
+                        Confirm Password
+                    </label>
+                    <input name="confirmPassword"
+                           formControlName="confirmPassword"
+                           type="password"
+                           demo-input>
+
+                    <demo-error *ngIf="confirmPasswordControl.hasError('required')">
+                        <ng-container i18n>The password confirmation is required.</ng-container>
+                    </demo-error>
+
+                    <demo-error *ngIf="confirmPasswordControl.hasError('confirmPassword')">
+                        <ng-container i18n>Password confirmation does not match.</ng-container>
+                    </demo-error>
+                </demo-form-field>
+
+
+                <button demo-primary-button
+                        class="register-form__submit"
+                        [loading]="(loading$ | async) || false"
+                        (click)="onSubmit()"
+                        i18n>Sign Up</button>
+
+                <div class="register-form__sign-up"
+                     i18n>
+                    Already have an account? <a [routerLink]="['/', 'auth', 'sign-in']">Login</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</demo-divided-page-wrapper>

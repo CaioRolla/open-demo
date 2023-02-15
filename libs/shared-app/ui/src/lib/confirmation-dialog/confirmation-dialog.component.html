@@ -1,0 +1,38 @@
+<demo-card>
+    <!-- <demo-card-simple-header>
+        {{ titleText }}
+    </demo-card-simple-header> -->
+
+    <div class="confirmaton-dialog">
+
+        <p>{{ confirmText }}</p>
+
+        <p i18n>Are you sure you want to continue?</p>
+
+    </div>
+
+    <demo-card-actions-footer>
+        <button demo-text-neutral-button
+                i18n
+                (click)="onCancel()">
+            Cancel
+        </button>
+
+        <button *ngIf="confirmationButtonTheme === ConfirmationDialogButtonTheme.DANGER"
+                type="button"
+                demo-danger-button
+                (click)="onSubmit()"
+                i18n>
+            {{ confirmButtonText }}
+        </button>
+
+        <button *ngIf="confirmationButtonTheme === ConfirmationDialogButtonTheme.PRIMARY"
+                type="button"
+                demo-primary-button
+                [loading]="loading"
+                (click)="onSubmit()"
+                i18n>
+            {{ confirmButtonText }}
+        </button>
+    </demo-card-actions-footer>
+</demo-card>

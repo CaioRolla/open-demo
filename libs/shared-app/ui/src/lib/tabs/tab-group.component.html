@@ -1,0 +1,22 @@
+<div class="tab-group">
+    <div class="tab-group__header"
+         [class.tab-group__header--card]="card">
+        <ng-content select="demo-tab-header"></ng-content>
+    </div>
+    <div class="tab-group__content">
+
+        <ng-container *ngIf="card">
+            <demo-card [noPadding]="true">
+                <ng-container *ngTemplateOutlet="tabs"></ng-container>
+            </demo-card>
+        </ng-container>
+        <ng-container *ngIf="!card">
+            <ng-container *ngTemplateOutlet="tabs"></ng-container>
+        </ng-container>
+        <ng-template #tabs>
+
+                <ng-content select="demo-tab"></ng-content>
+
+        </ng-template>
+    </div>
+</div>

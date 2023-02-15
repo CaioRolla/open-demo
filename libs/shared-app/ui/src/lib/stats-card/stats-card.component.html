@@ -1,0 +1,56 @@
+<demo-card>
+
+    <div
+        class="stats-card"
+        *ngIf="!loading"
+    >
+        <div class="stats-card__content">
+            <div class="stats-card__content__icon">
+                <ng-content select="hero-icon,[demo-stats-card-icon]"></ng-content>
+            </div>
+            <div class="stats-card__content__info">
+                <div class="stats-card__content__info__title">
+                    <ng-content select="[demo-stats-card-title]"></ng-content>
+                </div>
+                <div class="stats-card__content__info__subtitle">
+                    <ng-content select="[demo-stats-card-subtitle]"></ng-content>
+                </div>
+                <div class="stats-card__content__info__value">
+                    <div class="stats-card__content__info__value__number">
+                        <ng-content select="[demo-stats-card-value]"></ng-content>
+                    </div>
+                    <div class="stats-card__content__info__value__delta">
+                        <ng-content select="[demo-stats-card-delta],demo-delta-value"></ng-content>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div
+        class="stats-card"
+        *ngIf="loading"
+    >
+        <div class="stats-card__content">
+            <div
+                class="stats-card__content__icon"
+                style="display: block;"
+                demoLoadingPlaceholder
+            >
+            </div>
+            <div class="stats-card__content__info">
+                <div class="stats-card__content__info__title">
+                    <div demoLoadingPlaceholder style="height: var(--demo-fs-200); width:100px;"></div>
+                </div>
+                <div class="stats-card__content__info__value">
+                    <div class="stats-card__content__info__value__number">
+                        <div demoLoadingPlaceholder style="height: var(--demo-fs-600); width: 60px;"></div>
+                    </div>
+                    <div class="stats-card__content__info__value__delta">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</demo-card>

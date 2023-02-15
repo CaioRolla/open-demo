@@ -1,0 +1,28 @@
+:host {
+  display: block;
+}
+
+.create-list {
+  width: 80vw;
+  max-width: 620px;
+
+  &__content {
+    padding: 16px;
+    max-height: calc(100vh - 71px - 59px - 64px);
+    overflow: auto;
+
+    demo-form-field {
+      max-width: 280px;
+      margin-top: 16px;
+  
+      &:first-child {
+        margin-top: 0px;
+      }
+    }
+
+    .full-width {
+      max-width: 100%;
+    }
+
+  }
+}

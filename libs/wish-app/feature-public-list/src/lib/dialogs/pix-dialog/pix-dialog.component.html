@@ -1,0 +1,74 @@
+<div class="pix-dialog">
+
+    <demo-card>
+        <div class="pix-dialog__wrapper">
+            <div class="pix-dialog__wrapper__icon">
+                💵
+            </div>
+            <div class="pix-dialog__wrapper__content">
+
+                <div class="pix-dialog__wrapper__content__instructions">
+
+                    <div class="pix-dialog__wrapper__content__instructions__step">
+                        <div class="pix-dialog__wrapper__content__instructions__step__title">
+                            <div class="pix-dialog__wrapper__content__instructions__step__title__number">1.</div>
+                            <div class="pix-dialog__wrapper__content__instructions__step__title__text"
+                                 i18n>
+                                Open your payment app or internet banking
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="pix-dialog__wrapper__content__instructions__step">
+                        <div class="pix-dialog__wrapper__content__instructions__step__title">
+                            <div class="pix-dialog__wrapper__content__instructions__step__title__number">2.</div>
+                            <div class="pix-dialog__wrapper__content__instructions__step__title__text"
+                                 i18n>Search for the PIX option</div>
+                        </div>
+                    </div>
+
+                    <div class="pix-dialog__wrapper__content__instructions__step">
+                        <div class="pix-dialog__wrapper__content__instructions__step__title">
+                            <div class="pix-dialog__wrapper__content__instructions__step__title__number">3.</div>
+                            <div *notIsMobile
+                                 class="pix-dialog__wrapper__content__instructions__step__title__text"
+                                 i18n>
+                                Copy and paste the following code or scan the QR Code
+                            </div>
+                            <div *isMobile
+                                 class="pix-dialog__wrapper__content__instructions__step__title__text"
+                                 i18n>
+                                Copy and paste the following code
+                            </div>
+                        </div>
+                        <demo-form-field>
+                            <input name="amount"
+                                   [value]="data.list.pixCode"
+                                   type="text"
+                                   demo-input
+                                   #pixCodeInput>
+
+                            <button demo-button
+                                    demo-input-suffix
+                                    [cdkCopyToClipboard]="pixCodeInput.elementRef.nativeElement.value"
+                                    (cdkCopyToClipboardCopied)="copiedToClipboard()">
+                                <hero-icon name="clipboard"></hero-icon>
+                            </button>
+                        </demo-form-field>
+                    </div>
+
+                </div>
+
+                <div *notIsMobile
+                     class="pix-dialog__wrapper__content__qr-code">
+
+                    <img [src]="data.list.pixQr"
+                         alt="Donation QRCode">
+
+                </div>
+
+            </div>
+        </div>
+    </demo-card>
+
+</div>

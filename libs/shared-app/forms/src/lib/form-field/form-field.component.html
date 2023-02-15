@@ -1,0 +1,33 @@
+<div class="form-field">
+    <div class="form-field__label">
+        <ng-content select="[demo-label]"></ng-content>
+    </div>
+    <div class="form-field__content"
+         [class.form-field__content--focus]="onFocus"
+         [class.form-field__content--disabled]="isDisabled"
+         [class.form-field__content--has-error]="hasError"
+         [class.form-field__content--has-error-and-focus]="hasError && onFocus"
+         [class.form-field__content--has-prefix]="hasPrefix"
+         [class.form-field__content--has-suffix]="hasSuffix"
+         [class.form-field__content--has-prefix-and-suffix]="hasSuffix && hasPrefix">
+        <div *ngIf="!isSelect"
+             class="form-field__content__prefix">
+            <ng-content select="[demo-input-prefix]"></ng-content>
+        </div>
+        <div class="form-field__content__input">
+            <ng-content select="[demo-input], [demo-select], demo-color-picker"></ng-content>
+        </div>
+        <div *ngIf="!isSelect"
+             class="form-field__content__suffix">
+            <ng-content select="[demo-input-suffix]"></ng-content>
+        </div>
+    </div>
+    <div class="form-field__messages">
+        <ng-content *ngIf="!hasError && !isDisabled"
+                    select="demo-warning,[demo-warning]"></ng-content>
+        <ng-content *ngIf="!hasError"
+                    select="demo-hint,[demo-hint]"></ng-content>
+        <ng-content *ngIf="hasError"
+                    select="demo-error,[demo-error]"></ng-content>
+    </div>
+</div>

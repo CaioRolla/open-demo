@@ -1,0 +1,1 @@
+export const LIST_VISITED_EVENT_NAME = 'LIST_VISITED'

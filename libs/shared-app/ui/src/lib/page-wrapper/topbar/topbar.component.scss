@@ -1,0 +1,53 @@
+.top-bar {
+  // position: sti;
+  // top: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  height: 64px;
+  background: var(--demo-color-neutral-0);
+  border-bottom: 1px solid var(--demo-color-neutral-200);
+  z-index: 99;
+
+  &__logo {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 64px;
+
+    left: 50%;
+    top: 0%;
+    transform: translateX(-50%);
+
+    ::ng-deep img[demo-topbar-logo] {
+      max-height: 42px;
+    }
+
+    @media screen and (min-width: 600px) {
+      display: none;
+    }
+
+    &--always {
+      display: flex !important;
+    }
+  }
+
+  &__content {
+    display: none;
+    flex-direction: row;
+    flex: 1;
+    padding: 0px 8px;
+
+    &:not(&:empty) {
+      display: flex;
+    }
+  }
+
+  &__toggle-navbar,
+  &__content {
+    height: 100%;
+  }
+}

@@ -1,0 +1,137 @@
+:host {
+  display: block;
+}
+
+.theme {
+  display: flex;
+  flex-direction: column;
+  background: var(--theme-background);
+
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  position: relative;
+  background: var(--theme-background);
+  height: 350px;
+
+  &--no-banner {
+    height: 132px;
+
+  }
+
+
+  &__banner {
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    background: var(--theme-background);
+
+    img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+  }
+
+  &__profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background: var(--theme-background);
+
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0%);
+
+    img {
+      border-radius: 100%;
+      width: 94px;
+      height: 94px;
+      object-fit: cover;
+    }
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-size: var(--demo-fs-600);
+    color: var(--theme-color);
+    font-weight: 600;
+  }
+
+  p {
+    font-size: var(--demo-fs-300);
+    color: var(--theme-color);
+    font-weight: 300;
+  }
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 200px));
+  grid-gap: 32px;
+  padding: 32px;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--theme-background);
+  border: 1px solid var(--theme-border-color);
+  // box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+  //   rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+
+  h2 {
+    flex: 1;
+    padding: 12px;
+    font-size: var(--demo-fs-300);
+    color: var(--theme-color);
+    font-weight: 500;
+    margin-top: 4px;
+  }
+
+  &__actions {
+    margin-top: 28px;
+    button {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      border: 0;
+      background: var(--theme-background);
+      color: var(--theme-color);
+      cursor: pointer;
+      font-size: var(--demo-fs-300);
+      padding: 6px 12px;
+
+      hero-icon {
+        height: 18px !important;
+        width: 18px !important;
+        margin-right: 2px;
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+  }
+}

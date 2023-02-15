@@ -1,0 +1,7 @@
+:host {
+  display: block;
+
+  &.min-f-full {
+    min-height: 100%;
+  }
+}

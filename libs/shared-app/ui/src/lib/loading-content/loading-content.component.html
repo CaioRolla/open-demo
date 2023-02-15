@@ -1,0 +1,22 @@
+<demo-content-over-content [displayOverContent]="loading">
+
+  <ng-content>
+  </ng-content>
+
+
+  <div class="loading-content__loading" overContent>
+
+    <div class="loading-content__loading__spinner">
+      <demo-spinner-progress style="height: 24px;" primary></demo-spinner-progress>
+    </div>
+    <div
+      *ngIf="showLabel"
+      class="loading-content__loading__label"
+      i18n
+    >
+      Loading...
+    </div>
+
+  </div>
+
+</demo-content-over-content>

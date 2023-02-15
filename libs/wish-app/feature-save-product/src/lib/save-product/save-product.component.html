@@ -1,0 +1,196 @@
+<demo-card [noPadding]="true">
+    <demo-card-simple-header>
+        <ng-container i18n>Add Product</ng-container>
+    </demo-card-simple-header>
+
+    <demo-loading-content [loading]="(loadingProduct$ | async) || false">
+        <div class="save-product">
+
+            <div class="save-product__content">
+                <form [formGroup]="form"
+                      class="form">
+
+
+                    <ng-container *ngIf="personIdControl.value">
+                        <div *ngIf="product$ | async as product"
+                             class="form__selected selected">
+                            <div class="selected__text">
+                                <img [src]="product.person.email | gravatar"
+                                     onerror="this.src='/assets/placeholder-avatar.png'" />
+                                <div i18n><strong>{{ product.person.name }}</strong> selected this product.</div>
+                            </div>
+
+                            <div class="selected__action">
+                                <a href="javascript:"
+                                   (click)="personIdControl.patchValue(null)" i18n>Remove</a>
+                            </div>
+                        </div>
+                    </ng-container>
+
+
+                    <div class="form__url">
+
+                        <ng-container *ngTemplateOutlet="urlForm"></ng-container>
+
+                    </div>
+
+
+
+
+                    <demo-loading-content [loading]="(loadingProductData$ | async) || false">
+                        <ng-container>
+
+                            <div class="form__autoload">
+                                <demo-checkbox-field>
+                                    <input type="checkbox"
+                                           name="autoloadEnabled"
+                                           formControlName="autoloadEnabled">
+
+                                    <label for="autoloadEnabled"
+                                           i18n>
+                                        Load product information automatically
+                                        <!-- <span demo-checkbox-subtitle>
+                                            slower
+                                        </span> -->
+                                    </label>
+
+
+                                    <span demo-checkbox-subtitle
+                                          i18n>
+                                        Extract product name, description, price and images from URL
+                                    </span>
+
+                                </demo-checkbox-field>
+                            </div>
+
+                            <div class="form__name">
+                                <demo-form-field>
+                                    <label for="productName"
+                                           demo-label
+                                           i18n>
+                                        Name
+                                    </label>
+                                    <input name="productName"
+                                           formControlName="name"
+                                           type="text"
+                                           demo-input
+                                           maxlength="500">
+
+                                    <demo-error *ngIf="nameControl.hasError('required')">
+                                        <ng-container i18n>The product must have a name</ng-container>
+                                    </demo-error>
+                                </demo-form-field>
+
+
+                            </div>
+
+                            <div class="form__desc">
+                                <demo-form-field>
+                                    <label for="productDesc"
+                                           [optional]="true"
+                                           demo-label
+                                           i18n>
+                                        Description
+                                    </label>
+                                    <textarea name="productDesc"
+                                              formControlName="desc"
+                                              type="text"
+                                              demo-input
+                                              rows="4"
+                                              maxlength="500"></textarea>
+
+                                </demo-form-field>
+                            </div>
+
+                            <div class="form__price">
+                                <demo-form-field>
+                                    <label for="estimatedPrice"
+                                           demo-label
+                                           i18n>
+                                        Price
+                                    </label>
+                                    <input name="estimatedPrice"
+                                           formControlName="estimatedPrice"
+                                           type="text"
+                                           demo-input
+                                           mask="separator.2"
+                                           [thousandSeparator]="'.'"
+                                           [decimalMarker]="','"
+                                           prefix="R$ "
+                                           [dropSpecialCharacters]="true">
+
+                                    <demo-hint>
+                                        <ng-container i18n>Estimated price. It does not need to be exact.</ng-container>
+                                    </demo-hint>
+                                </demo-form-field>
+                            </div>
+
+                            <!-- <div *ngIf="data.productId"
+                             class="form__url">
+                            <ng-container *ngTemplateOutlet="urlForm"></ng-container>
+                        </div> -->
+
+                            <div class="form__images">
+
+                                <label [optional]="true"
+                                       demo-label
+                                       i18n>
+                                    Images
+                                </label>
+
+                                <demo-asset-upload formControlName="imagesIds"
+                                                  accept="image/*"
+                                                  [multiple]="true"
+                                                  [canReorder]="true"></demo-asset-upload>
+
+
+                            </div>
+
+                        </ng-container>
+                    </demo-loading-content>
+
+
+                </form>
+            </div>
+        </div>
+    </demo-loading-content>
+
+    <demo-card-actions-footer>
+        <button demo-text-neutral-button
+                i18n
+                (click)="onCancel()">
+            Cancel
+        </button>
+
+        <button type="button"
+                demo-primary-button
+                (click)="onSubmit()"
+                [disabled]="(loadingProductData$ | async) || false"
+                [loading]="(savingProduct$ | async) || false"
+                i18n>
+            Save
+        </button>
+    </demo-card-actions-footer>
+</demo-card>
+
+
+<ng-template #urlForm>
+    <demo-form-field>
+        <label for="productUrl"
+               [optional]="true"
+               demo-label
+               i18n>
+            URL
+        </label>
+        <input name="productUrl"
+               [formControl]="urlControl"
+               type="text"
+               demo-input
+               maxlength="500">
+
+        <demo-error *ngIf="urlControl.hasError('invalidUrl')">
+            <ng-container i18n>Please provide a valid URL</ng-container>
+        </demo-error>
+    </demo-form-field>
+
+</ng-template>
